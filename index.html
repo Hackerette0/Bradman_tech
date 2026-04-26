@@ -3,2390 +3,1545 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Noel Infrastructures Pvt Ltd — EPC & Construction Excellence</title>
-<meta name="description" content="Since 1990, Noel Infrastructures delivers landmark EPC, modular construction, facades, and renewable energy projects across India, Australia and the UAE."/>
+<title>TechSolutions — Advanced IoT & Automation</title>
+<meta name="description" content="Leading provider of IoT Systems, E-Surveillance, Automation, Access Control, and AI Voice Integration solutions"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,300;1,9..144,600&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Suisse+Int%27l:wght@300;400;500&family=Epilogue:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Epilogue:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet"/>
 <style>
+/* ─── TOKENS ─── */
 :root{
-  --ink:#1a0610;
-  --cream:#fff8f8;
-  --sand:#fff0f3;
-  --sand2:#ffe4ec;
-  --rust:#e11d48;
-  --rust2:#f43f6b;
-  --slate:#6a2030;
-  --muted:#9a4a5a;
-  --faint:#f8d0da;
-  --border:rgba(225,29,72,.12);
-  --white:#fffbfb;
-  --gold:#ca8a04;
-  --gold2:#d97706;
-  --dm-trans:background .3s ease,color .3s ease,border-color .3s ease;
+  --black:#0a0a0a;
+  --white:#f8f6f2;
+  --off:#f0ece4;
+  --border:#d8d2c8;
+  --border-dark:rgba(10,10,10,0.12);
+  --muted:#888078;
+  --accent:#0a0a0a;
+  --text:#1a1918;
 }
 
-/* ── DARK MODE ── */
-[data-theme="dark"]{
-  --ink:#f0ece4;
-  --cream:#141210;
-  --sand:#1c1a17;
-  --sand2:#221f1b;
-  --slate:#c8bfb2;
-  --muted:#8a8076;
-  --faint:#4a4540;
-  --border:rgba(240,236,228,0.1);
-  --white:#1c1a17;
-}
-[data-theme="dark"] nav{background:rgba(20,18,16,.95);}
-[data-theme="dark"] .subnav{background:#1c1a17;border-color:rgba(240,236,228,.1);}
-[data-theme="dark"] .subnav a:hover{background:#221f1b;}
-[data-theme="dark"] .nav-cta{background:var(--rust);color:#fff;}
-[data-theme="dark"] .stats-strip{background:#1c1a17;border-top:1px solid rgba(240,236,228,.08);border-bottom:1px solid rgba(240,236,228,.08);}
-[data-theme="dark"] .stats-strip .stat-n{color:var(--rust2);}
-[data-theme="dark"] .vision-sec{background:#7a5200;border-top:1px solid rgba(240,236,228,.08);}
-[data-theme="dark"] footer{background:#0a0908;}
-[data-theme="dark"] .svc-icon{background:var(--rust);}
-body{transition:var(--dm-trans);}
-*{transition:background .3s ease,border-color .3s ease;}
+/* ─── RESET ─── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;font-size:16px}
 body{
-  background:var(--cream);
-  color:var(--ink);
-  font-family:'Outfit',sans-serif;
-  font-size:16px;line-height:1.6;
+  background:var(--white);
+  color:var(--text);
+  font-family:'Epilogue',sans-serif;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 
-/* ── NAV ── */
+/* ─── NAV ─── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
-  background:rgba(245,241,234,.95);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;height:64px;
+  background:rgba(248,246,242,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border-dark);
 }
-.nav-inner{
-  max-width:1320px;margin:0 auto;padding:0 40px;
-  display:flex;align-items:center;justify-content:space-between;height:66px;
+.logo{
+  display:flex;align-items:flex-start;gap:0;
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:800;
+  letter-spacing:-0.025em;color:var(--black);
+  line-height:1;
 }
-.nav-logo img{height:42px;width:auto;}
-.nav-links{display:flex;gap:0;align-items:center;}
+.logo-r{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:8px;font-weight:400;
+  color:var(--muted);
+  line-height:1;margin-top:1px;margin-left:1px;
+}
+.nav-links{display:flex;gap:36px;align-items:center}
 .nav-links a{
-  font-size:13px;font-weight:500;color:var(--muted);
-  padding:8px 16px;border-radius:4px;
-  transition:color .15s,background .15s;letter-spacing:.01em;
+  font-size:13px;font-weight:400;color:var(--muted);
+  letter-spacing:0.01em;transition:color .15s;
 }
-.nav-links a:hover{color:var(--ink);background:rgba(20,18,16,.05);}
-.nav-links .has-sub{position:relative;}
-.nav-links .has-sub:hover .subnav{display:block;}
-.subnav{
-  display:none;position:absolute;top:100%;left:0;
-  background:var(--white);border:1px solid var(--border);
-  border-radius:6px;min-width:160px;padding:6px 0;
-  box-shadow:0 8px 24px rgba(20,18,16,.08);
-}
-.subnav a{
-  display:block;padding:9px 18px;font-size:13px;
-  color:var(--muted);border-radius:0;
-}
-.subnav a:hover{color:var(--ink);background:var(--sand);}
+.nav-links a:hover{color:var(--black)}
 .nav-cta{
-  font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--white);background:var(--ink);
-  padding:10px 22px;border-radius:4px;transition:background .15s;
+  font-size:12px;font-weight:600;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--white);
+  background:var(--black);padding:10px 22px;
+  border-radius:2px;transition:opacity .15s;
 }
-.nav-cta:hover{background:var(--rust);}
-.nav-mob{display:none;background:none;border:none;color:var(--ink);cursor:pointer;}
-@media(max-width:900px){.nav-links{display:none;}.nav-mob{display:flex;}}
+.nav-cta:hover{opacity:.8}
+@media(max-width:720px){.nav-links{display:none}}
 
-/* ── DARK MODE TOGGLE ── */
-.dm-toggle{
-  width:38px;height:22px;border-radius:99px;
-  background:var(--sand2);border:1px solid var(--border);
-  position:relative;cursor:pointer;flex-shrink:0;
-  transition:background .25s;
-}
-.dm-toggle::after{
-  content:'';position:absolute;
-  top:3px;left:3px;
-  width:14px;height:14px;border-radius:50%;
-  background:var(--muted);
-  transition:transform .25s,background .25s;
-}
-[data-theme="dark"] .dm-toggle{background:var(--rust);}
-[data-theme="dark"] .dm-toggle::after{transform:translateX(16px);background:#fff;}
-.dm-icon{
-  position:absolute;inset:0;display:flex;align-items:center;
-  justify-content:flex-end;padding-right:5px;pointer-events:none;
-}
-[data-theme="dark"] .dm-icon{justify-content:flex-start;padding-right:0;padding-left:5px;}
-.dm-icon svg{width:10px;height:10px;stroke:rgba(255,255,255,.7);fill:none;stroke-width:2;}
-
-/* ── STICKY ENQUIRE BTN ── */
-.sticky-enquire{
-  position:fixed;bottom:90px;right:28px;z-index:90;
-  background:var(--rust);color:#fff;
-  font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:400;
-  letter-spacing:.12em;text-transform:uppercase;
-  padding:12px 18px;border-radius:4px;
-  display:flex;align-items:center;gap:8px;
-  opacity:0;transform:translateY(12px);pointer-events:none;
-  transition:opacity .3s ease,transform .3s ease,background .15s;
-  border:none;cursor:pointer;
-  box-shadow:0 4px 16px rgba(181,66,10,.3);
-}
-.sticky-enquire.show{opacity:1;transform:translateY(0);pointer-events:auto;}
-.sticky-enquire:hover{background:var(--rust2);}
-.sticky-enquire svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2;flex-shrink:0;}
-
-/* ── BACK TO TOP ── */
-.back-top{
-  position:fixed;bottom:28px;right:28px;z-index:90;
-  width:44px;height:44px;border-radius:50%;
-  background:var(--ink);color:var(--cream);
-  border:none;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  opacity:0;transform:translateY(12px);pointer-events:none;
-  transition:opacity .3s ease,transform .3s ease,background .15s;
-}
-.back-top.show{opacity:1;transform:translateY(0);pointer-events:auto;}
-.back-top:hover{background:var(--rust);}
-.back-top svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;}
-[data-theme="dark"] .back-top{background:var(--sand);color:var(--ink);}
-
-/* ── COOKIE BANNER ── */
-.cookie-bar{
-  position:fixed;bottom:0;left:0;right:0;z-index:200;
-  background:var(--ink);
-  padding:16px 40px;
-  display:flex;align-items:center;justify-content:space-between;gap:20px;
-  border-top:1px solid rgba(245,241,234,.1);
-  transform:translateY(0);
-  transition:transform .4s ease;
-  flex-wrap:wrap;
-}
-.cookie-bar.hidden{transform:translateY(110%);}
-.cookie-text{
-  font-size:13px;font-weight:300;color:rgba(245,241,234,.55);
-  line-height:1.6;max-width:640px;
-}
-.cookie-text a{color:rgba(245,241,234,.8);border-bottom:1px solid rgba(245,241,234,.3);}
-.cookie-btns{display:flex;gap:10px;flex-shrink:0;}
-.cookie-accept{
-  font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:400;
-  letter-spacing:.1em;text-transform:uppercase;
-  background:var(--rust);color:#fff;
-  padding:9px 18px;border:none;border-radius:3px;cursor:pointer;
-  transition:background .15s;
-}
-.cookie-accept:hover{background:var(--rust2);}
-.cookie-decline{
-  font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:400;
-  letter-spacing:.1em;text-transform:uppercase;
-  background:transparent;color:rgba(245,241,234,.4);
-  padding:9px 16px;border:1px solid rgba(245,241,234,.15);border-radius:3px;cursor:pointer;
-  transition:border-color .15s,color .15s;
-}
-.cookie-decline:hover{border-color:rgba(245,241,234,.35);color:rgba(245,241,234,.7);}
-@media(max-width:600px){.cookie-bar{padding:16px 24px;}.cookie-btns{width:100%;}}
-
-/* ── HERO ── */
+/* ─── HERO ─── */
 .hero{
-  min-height:100svh;padding-top:66px;
-  display:flex;flex-direction:column;
-  background:#1a0610;
+  min-height:100svh;padding-top:64px;
+  display:grid;grid-template-rows:1fr auto;
+  background:var(--black);
   position:relative;overflow:hidden;
 }
-
-/* ── Static blueprint grid ── */
-.hero-grid{
-  position:absolute;inset:0;z-index:0;pointer-events:none;
-  background-image:
-    linear-gradient(rgba(225,29,72,.18) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(225,29,72,.18) 1px, transparent 1px),
-    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
-  background-size:
-    120px 120px,
-    120px 120px,
-    24px 24px,
-    24px 24px;
-}
-
-/* ── Hero project image carousel ── */
-.hero-car{
-  position:relative;z-index:4;
-  padding:0 40px;
-  max-width:1320px;width:100%;
-  margin:28px auto 36px;
-  overflow:hidden;
-}
-/* Fade edges */
-.hero-car::before,
-.hero-car::after{
-  content:'';position:absolute;top:0;bottom:0;width:110px;z-index:5;pointer-events:none;
-}
-.hero-car::before{left:40px;background:linear-gradient(to right,#1a0610 20%,transparent);}
-.hero-car::after {right:40px;background:linear-gradient(to left, #1a0610 20%,transparent);}
-.hero-car-track{
-  display:flex;gap:14px;
-  will-change:transform;
-  /* transition set by JS when sliding */
-}
-.hero-car-slide{
-  flex:0 0 250px;height:162px;border-radius:10px;
-  overflow:hidden;flex-shrink:0;
-  opacity:.5;
-  transition:opacity .5s ease;
-}
-.hero-car-slide.hcs-active{opacity:1;}
-.hero-car-slide img{
-  width:100%;height:100%;object-fit:cover;display:block;
-  transition:transform .75s ease, filter .5s ease;
-  filter:brightness(.65) saturate(.7);
+/* ── carousel ── */
+.hero-carousel{position:absolute;inset:0;z-index:0;}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease;}
+.hero-slide.active{opacity:1;}
+.hero-slide img{
+  width:100%;height:100%;object-fit:cover;
+  filter:grayscale(1)contrast(1.1)brightness(.4);
+  transition:filter 1.4s ease,transform 9s ease;
   transform:scale(1.07);
 }
-.hero-car-slide.hcs-active img{
-  filter:brightness(.9) saturate(1.05);
-  transform:scale(1);
-}
-@media(max-width:768px){
-  .hero-car{padding:0 24px;}
-  .hero-car-slide{flex:0 0 200px;height:130px;}
-  .hero-car::before{left:24px;}
-  .hero-car::after{right:24px;}
-}
-
-/* Dark overlay to keep text readable */
+.hero-slide.active img{transform:scale(1);}
 .hero-overlay{
-  position:absolute;inset:0;z-index:3;
-  background:linear-gradient(
-    to bottom,
-    rgba(13,11,9,.82) 0%,
-    rgba(13,11,9,.55) 40%,
-    rgba(13,11,9,.88) 100%
-  );
-  pointer-events:none;
+  position:absolute;inset:0;z-index:1;
+  background:rgba(10,10,10,.6);
+  transition:background .8s ease;
 }
-
-/* Staggered headline word entrance */
-@keyframes wordUp{
-  from{ opacity:0; transform:translateY(40px); }
-  to  { opacity:1; transform:translateY(0); }
+.hero:hover .hero-overlay{background:rgba(10,10,10,.22);}
+.hero:hover .hero-slide.active img{filter:grayscale(0)contrast(1.02)brightness(.68);}
+.hero-dots{
+  position:absolute;top:50%;right:36px;
+  transform:translateY(-50%);z-index:3;
+  display:flex;flex-direction:column;gap:10px;
 }
-.hero-word{
-  display:inline-block;opacity:0;
-  animation:wordUp .9s cubic-bezier(.22,.61,.36,1) forwards;
+.hero-dot{
+  width:5px;height:5px;border-radius:50%;
+  background:rgba(248,246,242,.2);cursor:pointer;
+  transition:background .3s,transform .3s;border:none;padding:0;
 }
-.hero-word.w1{animation-delay:.4s;}
-.hero-word.w2{animation-delay:.58s;}
-.hero-word.w3{animation-delay:.76s;}
-
-@keyframes lineIn{
-  from{opacity:0;transform:translateY(16px);}
-  to{opacity:1;transform:none;}
+.hero-dot.active{background:rgba(248,246,242,.85);transform:scale(1.5);}
+.hero-body{
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:60px 48px 0;
+  position:relative;z-index:2;
 }
-.hero-tag{
-  font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:400;
-  letter-spacing:.18em;text-transform:uppercase;
-  color:rgba(245,241,234,.35);
-  margin-bottom:28px;display:flex;align-items:center;gap:14px;
-  animation:lineIn .7s ease .2s both;
+.hero-eyebrow{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;font-weight:400;letter-spacing:0.15em;
+  text-transform:uppercase;color:rgba(248,246,242,.35);
+  margin-bottom:32px;display:flex;align-items:center;gap:14px;
 }
-.hero-tag::before{content:'';width:32px;height:1px;background:rgba(245,241,234,.25);}
-
-.hero-inner{
-  flex:1;display:flex;flex-direction:column;justify-content:flex-end;
-  padding:80px 40px 0;max-width:1320px;width:100%;margin:0 auto;
-  position:relative;z-index:4;
+.hero-eyebrow::before{
+  content:'';display:inline-block;
+  width:36px;height:1px;background:rgba(248,246,242,.25);
 }
 .hero h1{
-  font-family:'Fraunces',serif;
-  font-size:clamp(54px,9.5vw,148px);
-  font-weight:800;line-height:.92;letter-spacing:-.035em;
-  color:var(--white);max-width:980px;
+  font-family:'Playfair Display',serif;
+  font-size:clamp(80px,13vw,180px);
+  font-weight:800;line-height:.92;
+  letter-spacing:-0.03em;color:var(--white);
+  max-width:1100px;
 }
-.hero h1 em{font-style:italic;font-weight:300;color:rgba(245,241,234,.5);}
+.hero h1 em{font-style:italic;color:rgba(248,246,242,.45)}
+/* cycling ® colours */
+@keyframes cycleR{
+  0%,18%  {color:#d4f04a;}
+  20%,38% {color:#5b8dee;}
+  40%,58% {color:#ff5c47;}
+  60%,78% {color:#f5a623;}
+  80%,98% {color:#f7b8d8;}
+  100%    {color:#d4f04a;}
+}
+.hero-brand-r{
+  font-family:'Playfair Display',serif;
+  font-size:.42em;font-weight:700;
+  vertical-align:super;
+  margin-left:.05em;letter-spacing:0;
+  opacity:0;
+  display:inline-block;line-height:1;
+  position:relative;top:.02em;
+  animation:
+    charUp .5s cubic-bezier(.22,.61,.36,1) .75s forwards,
+    cycleR 6s linear 1.5s infinite;
+}
+.hero-sub-word{
+  font-family:'Epilogue',sans-serif;
+  font-weight:300;
+  font-size:clamp(18px,2.8vw,42px);
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(248,246,242,.32);
+  display:block;
+  margin-top:14px;
+}
+/* ── Fabrica letter reveal ── */
+.hero-brand{display:inline-block;overflow:hidden;}
+.hero-brand .char{
+  display:inline-block;opacity:0;
+  transform:translateY(100%);
+  animation:charUp .7s cubic-bezier(.22,.61,.36,1) forwards;
+}
+@keyframes charUp{to{opacity:1;transform:translateY(0);}}
 .hero-foot{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  border-top:1px solid rgba(245,241,234,.1);
-  margin-top:72px;position:relative;z-index:4;
-  animation:lineIn .7s ease 1s both;
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  border-top:1px solid rgba(248,246,242,.1);
+  margin-top:64px;position:relative;z-index:2;
 }
-.hfc{
-  padding:28px 40px;
-  border-right:1px solid rgba(245,241,234,.1);
+.hero-foot-cell{
+  padding:28px 48px;
+  border-right:1px solid rgba(248,246,242,.1);
   display:flex;flex-direction:column;gap:6px;
 }
-.hfc:last-child{border-right:none;}
-.hfc-lbl{
-  font-family:'JetBrains Mono',monospace;font-size:9px;
-  letter-spacing:.14em;text-transform:uppercase;color:rgba(245,241,234,.28);
+.hero-foot-cell:last-child{border-right:none}
+.hf-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(248,246,242,.3);
 }
-.hfc-val{font-size:13px;font-weight:400;color:rgba(245,241,234,.65);line-height:1.55;}
-.hfc-cta{
-  font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:400;
-  letter-spacing:.1em;text-transform:uppercase;color:var(--white);
+.hf-val{font-size:13px;font-weight:400;color:rgba(248,246,242,.7);line-height:1.5;}
+.hf-cta{
+  font-size:12px;font-weight:600;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--white);
   display:inline-flex;align-items:center;gap:8px;
-  border-bottom:1px solid rgba(245,241,234,.3);padding-bottom:2px;
+  border-bottom:1px solid rgba(248,246,242,.3);padding-bottom:2px;
   width:fit-content;margin-top:4px;transition:border-color .15s;
 }
-.hfc-cta:hover{border-color:var(--white);}
+.hf-cta:hover{border-color:var(--white)}
 @media(max-width:768px){
-  .hero-inner{padding:60px 24px 0;}
-  .hero-foot{grid-template-columns:1fr;}
-  .hfc{padding:20px 24px;border-right:none;border-bottom:1px solid rgba(245,241,234,.08);}
+  .hero-body{padding:48px 24px 0}
+  .hero-foot{grid-template-columns:1fr;border-top:1px solid rgba(248,246,242,.1)}
+  .hero-foot-cell{padding:20px 24px;border-right:none;border-bottom:1px solid rgba(248,246,242,.08)}
+  .hero-dots{display:none;}
 }
 
-/* ── SECTIONS ── */
-section{padding:100px 40px;}
-.container{max-width:1320px;margin:0 auto;}
-.eyebrow{
-  font-family:'JetBrains Mono',monospace;font-size:9px;
-  letter-spacing:.18em;text-transform:uppercase;color:var(--rust);
-  margin-bottom:16px;display:flex;align-items:center;gap:12px;
-}
-.eyebrow::before{content:'';width:24px;height:1px;background:var(--rust);}
-.sec-h{
-  font-family:'Fraunces',serif;
-  font-size:clamp(32px,5vw,64px);font-weight:800;
-  letter-spacing:-.03em;line-height:1;color:var(--ink);margin-bottom:16px;
-}
-.sec-p{font-size:15px;font-weight:300;color:var(--muted);line-height:1.8;max-width:480px;}
-@media(max-width:720px){section{padding:72px 24px;}}
-
-/* ── STATS STRIP ── */
-.stats-strip{
-  background:var(--rust);padding:0;
-  border-top:none;border-bottom:none;
-}
-.stats-inner{
-  max-width:1320px;margin:0 auto;
-  display:grid;grid-template-columns:repeat(4,1fr);
-}
-.stat-cell{
-  padding:36px 40px;
-  border-right:1px solid rgba(245,241,234,.15);
-  display:flex;flex-direction:column;gap:6px;
-}
-.stat-cell:last-child{border-right:none;}
-.stat-n{
-  font-family:'Fraunces',serif;
-  font-size:clamp(36px,4vw,58px);font-weight:800;
-  letter-spacing:-.04em;color:var(--white);line-height:1;
-}
-.stat-l{
-  font-family:'JetBrains Mono',monospace;font-size:10px;
-  letter-spacing:.12em;text-transform:uppercase;
-  color:rgba(245,241,234,.6);line-height:1.4;
-}
-@media(max-width:768px){
-  .stats-inner{grid-template-columns:1fr 1fr;}
-  .stat-cell{border-bottom:1px solid rgba(245,241,234,.12);}
-  .stat-cell:nth-child(2n){border-right:none;}
-}
-
-/* ── INTRO ── */
-.intro-sec{border-bottom:1px solid var(--border);}
-.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-.intro-lede{
-  font-family:'Fraunces',serif;
-  font-size:clamp(22px,3vw,36px);font-weight:700;
-  letter-spacing:-.02em;line-height:1.2;color:var(--ink);margin-bottom:20px;
-}
-.intro-body{font-size:15px;font-weight:300;color:var(--muted);line-height:1.85;margin-bottom:16px;}
-.intro-feats{
-  display:grid;grid-template-columns:1fr 1fr;gap:1px;
-  background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;
-}
-.i-feat{background:var(--cream);padding:28px 24px;transition:background .2s;}
-.i-feat:hover{background:var(--sand);}
-.i-feat-n{
-  font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--rust);
-  letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;display:block;
-}
-.i-feat h4{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px;letter-spacing:-.01em;}
-.i-feat p{font-size:12px;font-weight:300;color:var(--muted);line-height:1.65;}
-@media(max-width:768px){.intro-grid{grid-template-columns:1fr;}.intro-feats{display:none;}}
-
-/* ── SERVICES — Logarithmic Spiral Fan ── */
-.services-sec{background:var(--sand);border-bottom:1px solid var(--border);overflow:visible;}
-.svc-fan-wrap{
-  display:flex;align-items:center;
-  min-height:680px;position:relative;gap:0;
-}
-.svc-fan-left{
-  flex:0 0 300px;padding-right:24px;
-  z-index:5;position:relative;
-}
-.svc-count-tag{
-  font-family:'JetBrains Mono',monospace;font-size:10px;
-  color:var(--muted);letter-spacing:.08em;
-  margin-top:24px;display:block;
-}
-.svc-fan-area{
-  flex:1;position:relative;
-  min-height:680px;overflow:visible;
-}
-.svc-arc-svg{
-  position:absolute;inset:0;
-  width:100%;height:100%;
-  pointer-events:none;overflow:visible;z-index:0;
-}
-.svc-anchor-dot{
-  position:absolute;width:10px;height:10px;border-radius:50%;
-  background:var(--rust);transform:translate(-50%,-50%);z-index:3;
-  box-shadow:0 0 0 4px rgba(225,29,72,.15);
-}
-.svc-anchor-dot::after{
-  content:'';position:absolute;inset:-8px;border-radius:50%;
-  border:1px solid rgba(225,29,72,.3);
-  animation:anchorPulse 2.2s ease-in-out infinite;
-}
-@keyframes anchorPulse{
-  0%,100%{transform:scale(1);opacity:.6;}
-  50%{transform:scale(1.5);opacity:0;}
-}
-/* Fan item — entrance: fly out from anchor */
-.sfi{
-  position:absolute;display:flex;flex-direction:column;
-  align-items:center;gap:10px;cursor:pointer;z-index:2;
-  transform:translate(-50%,-50%) scale(0.05);
-  opacity:0;
-  will-change:transform,opacity;
-  transition:
-    transform .6s cubic-bezier(.34,1.56,.64,1),
-    opacity   .4s ease;
-  transition-delay:var(--fan-delay,0ms);
-}
-.sfi.fan-in{
-  transform:translate(-50%,-50%) scale(1);
-  opacity:1;
-}
-
-/* Hover animation keyframes */
-@keyframes bubbleBounce{
-  0%  {transform:scale(1.26);}
-  28% {transform:scale(1.34) rotate(-8deg);}
-  55% {transform:scale(1.28) rotate(5deg);}
-  78% {transform:scale(1.26) rotate(-2deg);}
-  100%{transform:scale(1.26) rotate(0);}
-}
-@keyframes iconWiggle{
-  0%  {transform:rotate(0)   scale(1);}
-  30% {transform:rotate(-14deg) scale(1.12);}
-  60% {transform:rotate(9deg)  scale(1.08);}
-  80% {transform:rotate(-4deg) scale(1.04);}
-  100%{transform:rotate(0)   scale(1);}
-}
-@keyframes ringPulse{
-  0%  {inset:-4px; border-color:rgba(225,29,72,.5); opacity:1;}
-  100%{inset:-14px;border-color:rgba(225,29,72,0);  opacity:0;}
-}
-
-.sfi-bubble{
-  width:68px;height:68px;border-radius:18px;
-  background:var(--ink);
-  display:flex;align-items:center;justify-content:center;
-  position:relative;
-  box-shadow:0 4px 14px rgba(26,6,16,.2),0 1px 3px rgba(26,6,16,.12),inset 0 1px 0 rgba(255,255,255,.07);
-  transition:box-shadow .25s ease, background .2s ease, transform .32s cubic-bezier(.34,1.56,.64,1);
-}
-/* Ring that expands on hover */
-.sfi-bubble::before{
-  content:'';position:absolute;inset:-4px;border-radius:22px;
-  border:2px solid rgba(225,29,72,0);
-  transition:inset .25s ease, border-color .25s ease, border-radius .25s ease, opacity .25s ease;
-  pointer-events:none;
-}
-.sfi:hover .sfi-bubble{
-  background:var(--rust);
-  animation:bubbleBounce .48s ease forwards;
-  box-shadow:
-    0 16px 42px rgba(225,29,72,.4),
-    0  0   0 10px rgba(225,29,72,.08),
-    0  4px 12px rgba(26,6,16,.18),
-    inset 0 1px 0 rgba(255,255,255,.12);
-}
-.sfi:hover .sfi-bubble::before{
-  inset:-10px;border-color:rgba(225,29,72,.35);border-radius:28px;
-}
-.sfi:hover .sfi-bubble svg{
-  animation:iconWiggle .45s cubic-bezier(.34,1.56,.64,1) forwards;
-}
-.sfi.nb1 .sfi-bubble{transform:scale(1.13);}
-.sfi.nb2 .sfi-bubble{transform:scale(1.07);}
-.sfi-bubble svg{
-  width:26px;height:26px;stroke:rgba(255,255,255,.88);fill:none;
-  stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;
-  transition:transform .3s ease;
-}
-.sfi-badge{
-  position:absolute;top:-8px;right:-8px;
-  width:20px;height:20px;border-radius:50%;
-  background:var(--rust);color:#fff;
-  font-size:8px;font-weight:700;
-  font-family:'JetBrains Mono',monospace;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 2px 6px rgba(225,29,72,.45);
-  transition:background .2s, transform .25s cubic-bezier(.34,1.56,.64,1);
-}
-.sfi:hover .sfi-badge{background:#ca8a04;transform:scale(1.15);}
-.sfi-name{
-  font-size:11.5px;font-weight:600;color:var(--ink);
-  letter-spacing:-.01em;line-height:1.3;text-align:center;
-  max-width:96px;pointer-events:none;
-  transition:color .2s;
-  text-shadow:0 1px 3px rgba(255,255,255,.8);
-}
-.sfi:hover .sfi-name{color:var(--rust);}
-/* macOS-style tooltip */
-.sfi-tip{
-  position:absolute;bottom:calc(100% + 16px);left:50%;
-  transform:translateX(-50%) translateY(6px);
-  background:var(--ink);color:rgba(255,255,255,.82);
-  font-size:11px;font-weight:300;line-height:1.45;
-  padding:7px 13px;border-radius:7px;
-  white-space:nowrap;pointer-events:none;
-  opacity:0;
-  transition:opacity .2s ease, transform .2s cubic-bezier(.34,1.56,.64,1);
-  z-index:40;box-shadow:0 6px 20px rgba(26,6,16,.22);
-}
-.sfi-tip::after{
-  content:'';position:absolute;top:100%;left:50%;
-  transform:translateX(-50%);
-  border:5px solid transparent;border-top-color:var(--ink);
-}
-.sfi:hover .sfi-tip{opacity:1;transform:translateX(-50%) translateY(0) scale(1.02);}
-@media(max-width:960px){
-  .svc-fan-wrap{flex-direction:column;min-height:auto;}
-  .svc-fan-left{flex:none;width:100%;padding:0 0 32px;}
-  .svc-fan-area{width:100%;min-height:560px;}
-}
-@media(max-width:580px){.svc-fan-area{min-height:480px;}}
-
-/* ── ONGOING PROJECTS ── */
-.projects-sec{border-bottom:1px solid var(--border);}
-.proj-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;flex-wrap:wrap;gap:20px;}
-.proj-grid{
-  display:grid;grid-template-columns:repeat(2,1fr);
-  gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;
-}
-.proj-card{background:var(--cream);display:flex;flex-direction:column;transition:background .25s;}
-.proj-card:hover{background:var(--sand);}
-.proj-img{height:240px;overflow:hidden;position:relative;background:var(--sand2);}
-.proj-img img{
-  width:100%;height:100%;object-fit:cover;
-  filter:grayscale(.4)contrast(1.05);
-  transition:transform .55s ease,filter .35s;
-}
-.proj-card:hover .proj-img img{transform:scale(1.04);filter:grayscale(0)contrast(1);}
-.proj-body{padding:28px 28px 32px;flex:1;display:flex;flex-direction:column;}
-.proj-tag{
-  font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--rust);
-  letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;
-}
-.proj-body h3{
-  font-family:'Fraunces',serif;font-size:20px;font-weight:700;
-  color:var(--ink);letter-spacing:-.02em;line-height:1.15;margin-bottom:8px;
-}
-.proj-lnk{
-  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--muted);
-  display:inline-flex;align-items:center;gap:7px;margin-top:auto;padding-top:14px;
-  border-top:1px solid var(--border);width:fit-content;
-  transition:color .15s,gap .15s;
-}
-.proj-card:hover .proj-lnk{color:var(--rust);gap:11px;}
-@media(max-width:640px){.proj-grid{grid-template-columns:1fr;}}
-
-/* ── MEGAFACTORY ── */
-.factory-sec{
-  background:var(--ink);color:var(--white);
-  position:relative;overflow:hidden;
-}
-.factory-inner{
-  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
-}
-.factory-left .eyebrow{color:rgba(245,241,234,.4);}
-.factory-left .eyebrow::before{background:rgba(245,241,234,.3);}
-.factory-left h2{
-  font-family:'Fraunces',serif;
-  font-size:clamp(28px,4vw,52px);font-weight:800;
-  letter-spacing:-.03em;line-height:1.05;color:var(--white);margin-bottom:20px;
-}
-.factory-left p{font-size:15px;font-weight:300;color:rgba(245,241,234,.5);line-height:1.85;margin-bottom:12px;}
-.factory-specs{
-  display:grid;grid-template-columns:1fr 1fr;gap:1px;
-  background:rgba(245,241,234,.08);border-radius:8px;overflow:hidden;margin-top:32px;
-}
-.fspec{background:rgba(245,241,234,.03);padding:22px 20px;transition:background .2s;}
-.fspec:hover{background:rgba(245,241,234,.07);}
-.fspec-n{
-  font-family:'JetBrains Mono',monospace;font-size:9px;
-  color:rgba(245,241,234,.3);letter-spacing:.12em;text-transform:uppercase;
-  margin-bottom:8px;display:block;
-}
-.fspec h4{font-size:13px;font-weight:500;color:rgba(245,241,234,.8);margin-bottom:4px;}
-.fspec p{font-size:12px;font-weight:300;color:rgba(245,241,234,.38);line-height:1.6;}
-.factory-right img{
-  width:100%;aspect-ratio:4/3;object-fit:cover;
-  border-radius:8px;filter:brightness(.8)contrast(1.05);
-}
-@media(max-width:768px){.factory-inner{grid-template-columns:1fr;}.factory-right{display:none;}}
-
-/* ── COMPLETED PORTFOLIO ── */
-.portfolio-sec{background:var(--sand);border-bottom:1px solid var(--border);}
-.port-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:1px;background:var(--border);border:1px solid var(--border);
-  border-radius:10px;overflow:hidden;margin-top:56px;
-}
-.port-card{background:var(--sand);display:flex;flex-direction:column;transition:background .25s;}
-.port-card:hover{background:var(--white);}
-.port-img{height:180px;overflow:hidden;background:var(--sand2);}
-.port-img img{
-  width:100%;height:100%;object-fit:cover;
-  filter:grayscale(.5)contrast(1.05);
-  transition:transform .5s ease,filter .35s;
-}
-.port-card:hover .port-img img{transform:scale(1.05);filter:grayscale(0)contrast(1);}
-.port-body{padding:18px 18px 22px;}
-.port-body h4{
-  font-family:'Fraunces',serif;font-size:14px;font-weight:700;
-  color:var(--ink);letter-spacing:-.01em;margin-bottom:4px;
-}
-.port-loc{
-  font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);
-  letter-spacing:.1em;text-transform:uppercase;
-}
-@media(max-width:900px){.port-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:480px){.port-grid{grid-template-columns:1fr;}}
-
-/* ── VISION ── */
-.vision-sec{
-  background:#ca8a04;color:#fff;
-  padding:80px 40px;
-  position:relative;overflow:hidden;
-}
-.vision-inner{
-  max-width:1320px;margin:0 auto;
-  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
-}
-.vision-quote{
-  font-family:'Fraunces',serif;
-  font-size:clamp(22px,3vw,40px);font-weight:600;
-  font-style:italic;line-height:1.3;letter-spacing:-.02em;color:var(--white);
-}
-.vision-body{font-size:14px;font-weight:300;color:rgba(245,241,234,.65);line-height:1.8;}
-@media(max-width:768px){.vision-inner{grid-template-columns:1fr;}}
-
-/* ── COMPANIES ── */
-.companies-sec{border-bottom:1px solid var(--border);}
-.co-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1px;background:var(--border);border:1px solid var(--border);
-  border-radius:10px;overflow:hidden;margin-top:56px;
-}
-.co-card{background:var(--cream);overflow:hidden;transition:background .25s;}
-.co-card:hover{background:var(--sand);}
-.co-img{height:200px;overflow:hidden;background:var(--sand2);}
-.co-img img{
-  width:100%;height:100%;object-fit:cover;
-  filter:grayscale(.5)brightness(.9);
-  transition:transform .5s ease,filter .35s;
-}
-.co-card:hover .co-img img{transform:scale(1.04);filter:grayscale(0)brightness(1);}
-.co-body{padding:28px;}
-.co-body h3{
-  font-family:'Fraunces',serif;font-size:18px;font-weight:700;
-  color:var(--ink);letter-spacing:-.02em;margin-bottom:12px;
-}
-.co-body p{font-size:13px;font-weight:300;color:var(--muted);line-height:1.75;margin-bottom:16px;}
-.co-lnk{
-  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--rust);
-  display:inline-flex;align-items:center;gap:7px;
-  border-bottom:1px solid rgba(181,66,10,.25);padding-bottom:2px;
-  transition:gap .15s;
-}
-.co-card:hover .co-lnk{gap:11px;}
-@media(max-width:768px){.co-grid{grid-template-columns:1fr;}}
-
-/* ── INDIA OPS ── */
-.indiaops-sec{background:#fffbeb;}
-.ops-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1px;background:var(--border);border:1px solid var(--border);
-  border-radius:10px;overflow:hidden;margin-top:56px;
-}
-.ops-card{background:var(--sand);transition:background .25s;}
-.ops-card:hover{background:var(--white);}
-.ops-img{height:200px;overflow:hidden;background:var(--sand2);}
-.ops-img img{
-  width:100%;height:100%;object-fit:cover;
-  filter:grayscale(.4)contrast(1.05);
-  transition:transform .5s ease,filter .35s;
-}
-.ops-card:hover .ops-img img{transform:scale(1.04);filter:grayscale(0)contrast(1);}
-.ops-body{padding:20px 20px 24px;}
-.ops-body h4{
-  font-family:'Fraunces',serif;font-size:15px;font-weight:700;
-  color:var(--ink);letter-spacing:-.02em;
-}
-@media(max-width:900px){.ops-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:480px){.ops-grid{grid-template-columns:1fr;}}
-
-/* ── FOOTER ── */
-footer{
-  background:var(--ink);padding:60px 40px 28px;
+/* ── STATS SECTION ── */
+.stats-sec{
+  padding:100px 48px;
+  background:var(--black);
   border-top:none;
 }
-.footer-inner{max-width:1320px;margin:0 auto;}
-.footer-top{
-  display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px;
+.stats-header{
+  margin-bottom:60px;
 }
-.footer-logo img{height:36px;width:auto;filter:brightness(0)invert(1);margin-bottom:16px;}
-.footer-brand p{font-size:13px;font-weight:300;color:rgba(245,241,234,.3);line-height:1.65;}
-.footer-col h4{
-  font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;
-  text-transform:uppercase;color:rgba(245,241,234,.25);margin-bottom:16px;
+.stats-header .sec-eyebrow{color:rgba(248,246,242,.3);}
+.stats-header .sec-eyebrow::before{background:rgba(248,246,242,.2);}
+.stats-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,4vw,48px);font-weight:800;
+  letter-spacing:-0.03em;line-height:1.05;color:var(--white);
 }
-.footer-col ul{list-style:none;}
-.footer-col li{margin-bottom:8px;}
-.footer-col a{font-size:13px;font-weight:300;color:rgba(245,241,234,.4);transition:color .15s;}
-.footer-col a:hover{color:rgba(245,241,234,.85);}
-.footer-col span{font-size:13px;font-weight:300;color:rgba(245,241,234,.3);display:block;margin-bottom:4px;}
-.footer-bottom{
-  border-top:1px solid rgba(245,241,234,.07);padding-top:20px;
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
-}
-.footer-bottom p{font-size:12px;font-weight:300;color:rgba(245,241,234,.2);}
-@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;gap:32px;}}
-@media(max-width:480px){.footer-top{grid-template-columns:1fr;};footer{padding:48px 24px 24px;}}
-
-/* ── REVEAL ── */
-.r{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
-.r.on{opacity:1;transform:none;}
-.d1{transition-delay:.07s}.d2{transition-delay:.14s}
-.d3{transition-delay:.21s}.d4{transition-delay:.28s}
-.d5{transition-delay:.35s}.d6{transition-delay:.42s}
-
-/* ── DOODLE: CENTRED FLOAT LAYOUT ── */
-/* The animation floats in the centre; text wraps around it naturally */
-.doodle-scroll-section{
-  display:block;
-  background:var(--cream);
-  border-top:1px solid var(--border);
-  position:relative;
-}
-
-/* Sticky animation — full width, but the canvas floats inside content */
-.doodle-sticky-wrap{
-  display:none; /* hide the old sidebar — we move canvas into content flow */
-}
-.doodle-grid-bg{ display:none; }
-
-/* The canvas floats centred in the text flow */
-.doodle-float-box{
-  float:none;
-  display:block;
-  margin:0 auto 40px;
-  width:fit-content;
-  position:sticky;
-  top:50%;
-  transform:translateY(-50%);
-  z-index:5;
-  pointer-events:none;
-  text-align:center;
-}
-/* Actually: we use a position:sticky float-in-margin approach */
-/* Canvas wrapper is sticky and centred */
-
-/* Override: make it truly centered with sticky */
-.doodle-canvas-sticky{
-  position:sticky;
-  top:50%;
-  transform:translateY(-50%);
-  z-index:5;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  pointer-events:none;
-  margin:0 auto;
-  width:fit-content;
-}
-
-/* Content column is full page width, canvas is a centred sticky */
-.doodle-content{
-  position:relative;
-}
-
-/* Each section inside doodle-content: text columns either side of centre */
-.doodle-content section,
-.doodle-content .intro-sec,
-.doodle-content .co-banner-sec{
-  border-bottom:1px solid var(--border);
-  clear:both;
-}
-.doodle-content .container{ max-width:100%; padding:0 36px; }
-.doodle-content .factory-sec{ background:var(--ink); }
-.doodle-content .vision-sec { background:var(--rust); }
-.doodle-content .services-sec,
-.doodle-content .portfolio-sec,
-.doodle-content .indiaops-sec{ background:var(--sand); }
-
-/* Float layout for sections — text left + right, animation in middle */
-.wrap-layout{
+.stats-grid{
   display:grid;
-  grid-template-columns:1fr 320px 1fr;
-  gap:0 32px;
-  align-items:start;
-  padding:80px 40px;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
 }
-.wrap-left{ grid-column:1; }
-.wrap-anim{ grid-column:2; position:sticky; top:50%; transform:translateY(-50%); }
-.wrap-right{ grid-column:3; }
+.stat-card{
+  border-radius:16px;
+  padding:40px 32px 36px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  min-height:220px;
+  position:relative;overflow:hidden;
+}
+/* card colour variants – inspired by the screenshot */
+.stat-card:nth-child(1){background:#d4f04a;color:#0a0a0a;}   /* lime */
+.stat-card:nth-child(2){background:#c8e0f8;color:#0a0a0a;}   /* sky blue */
+.stat-card:nth-child(3){background:#f7c6e8;color:#0a0a0a;}   /* pink */
+.stat-card:nth-child(4){background:#f0ece4;color:#0a0a0a;}   /* off-white */
 
-@media(max-width:1100px){
-  .wrap-layout{ grid-template-columns:1fr; gap:32px; }
-  .wrap-anim{ display:none; }
+.stat-card-top{display:flex;justify-content:space-between;align-items:flex-start;}
+.stat-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;font-weight:400;letter-spacing:0.12em;
+  text-transform:uppercase;opacity:.55;
+  max-width:120px;line-height:1.5;
 }
-
-/* ── COMPANY BANNER ── */
-.co-banner-sec{
-  background:var(--ink);
-  border-top:none;border-bottom:none;
-  padding:0;overflow:hidden;
-}
-.co-banner-eyebrow{
-  padding:32px 40px 0;
-  font-family:'JetBrains Mono',monospace;
-  font-size:9px;letter-spacing:.18em;text-transform:uppercase;
-  color:rgba(245,241,234,.22);
-}
-.co-banner-track-wrap{
-  overflow:hidden;padding:20px 0 28px;
-}
-.co-banner-track{
-  display:flex;align-items:stretch;gap:0;
-  animation:coScroll 32s linear infinite;
-  width:max-content;
-}
-.co-banner-track:hover{ animation-play-state:paused; }
-@keyframes coScroll{
-  0%{transform:translateX(0);}
-  100%{transform:translateX(-50%);}
-}
-.co-banner-item{
-  display:flex;flex-direction:column;justify-content:center;
-  padding:20px 36px;
-  border-right:1px solid rgba(255,255,255,.06);
-  min-width:190px;
-  background:var(--acc,#b5420a);
-  cursor:default;
-  transition:filter .2s;
-  flex-shrink:0;
-}
-.co-banner-item:hover{ filter:brightness(1.18); }
-.co-banner-item{
-  font-family:'Fraunces',serif;
-  font-size:clamp(22px,2.8vw,32px);
-  font-weight:800;letter-spacing:-.03em;line-height:1;
-  color:var(--acct,#fff);
-}
-.co-banner-item span{
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;font-weight:400;letter-spacing:.1em;
+.stat-tag{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;font-weight:400;letter-spacing:0.1em;
   text-transform:uppercase;
-  color:rgba(255,255,255,.55);
-  margin-top:6px;display:block;
-  font-style:normal;
+  background:rgba(10,10,10,.1);
+  padding:4px 10px;border-radius:99px;
+  opacity:.6;
+}
+.stat-num{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(52px,6vw,80px);
+  font-weight:800;letter-spacing:-0.04em;line-height:1;
+}
+.stat-num sup{
+  font-size:.4em;vertical-align:super;
+  letter-spacing:0;margin-left:2px;
+}
+.stat-sub{
+  font-size:13px;font-weight:400;opacity:.55;
+  margin-top:6px;line-height:1.4;
+}
+/* big ghost letter watermark in card bg */
+.stat-bg-char{
+  position:absolute;right:-8px;top:-10px;
+  font-family:'Playfair Display',serif;
+  font-size:160px;font-weight:800;
+  color:rgba(10,10,10,.06);
+  line-height:1;pointer-events:none;letter-spacing:-0.04em;
+  user-select:none;
+}
+@media(max-width:900px){.stats-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.stats-grid{grid-template-columns:1fr;}.stat-card{min-height:160px;}}
+@media(max-width:720px){.stats-sec{padding:72px 24px;}}
+.stats-source-note{
+  margin-top:20px;font-size:11px;opacity:.38;
+  font-family:'JetBrains Mono',monospace;letter-spacing:.04em;
+  text-align:right;color:rgba(248,246,242,.7);
+}
+.hero-foot{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  border-top:1px solid rgba(248,246,242,.1);
+  margin-top:64px;position:relative;z-index:1;
+}
+.hero-foot-cell{
+  padding:28px 48px;
+  border-right:1px solid rgba(248,246,242,.1);
+  display:flex;flex-direction:column;gap:6px;
+}
+.hero-foot-cell:last-child{border-right:none}
+.hf-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(248,246,242,.3);
+}
+.hf-val{
+  font-size:13px;font-weight:400;color:rgba(248,246,242,.7);
+  line-height:1.5;
+}
+.hf-cta{
+  font-size:12px;font-weight:600;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--white);
+  display:inline-flex;align-items:center;gap:8px;
+  border-bottom:1px solid rgba(248,246,242,.3);padding-bottom:2px;
+  width:fit-content;margin-top:4px;transition:border-color .15s;
+}
+.hf-cta:hover{border-color:var(--white)}
+@media(max-width:768px){
+  .hero-body{padding:48px 24px 0}
+  .hero-foot{grid-template-columns:1fr;border-top:1px solid rgba(248,246,242,.1)}
+  .hero-foot-cell{padding:20px 24px;border-right:none;border-bottom:1px solid rgba(248,246,242,.08)}
 }
 
-/* ── CAROUSEL ── */
-.carousel-sec{
-  background:var(--cream);
-  padding:80px 40px;
-  border-bottom:1px solid var(--border);
-  overflow:hidden;
+/* ─── MARQUEE ─── */
+.marquee-wrap{
+  overflow:hidden;background:var(--off);
+  border-top:1px solid var(--border-dark);
+  border-bottom:1px solid var(--border-dark);
+  padding:14px 0;
 }
-.carousel-hdr{
-  display:flex;justify-content:space-between;align-items:flex-end;
-  margin-bottom:40px;
+.marquee-track{
+  display:flex;white-space:nowrap;
+  animation:marquee 28s linear infinite;
 }
-.carousel-controls{ display:flex;gap:8px; }
-.car-btn{
-  width:44px;height:44px;border-radius:50%;
-  border:1px solid var(--border);background:var(--cream);
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;transition:background .15s,border-color .15s;
-}
-.car-btn:hover{ background:var(--sand);border-color:var(--rust); }
-.car-btn svg{ width:18px;height:18px;stroke:var(--ink); }
-.carousel-viewport{
-  overflow:hidden;border-radius:8px;
-}
-.carousel-track{
-  display:flex;gap:24px;
-  transition:transform .55s cubic-bezier(.22,.61,.36,1);
-}
-.car-slide{
-  min-width:calc(50% - 12px);
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:8px;
-  overflow:hidden;
+.marquee-item{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;font-weight:400;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--muted);
+  padding:0 40px;display:flex;align-items:center;gap:24px;
   flex-shrink:0;
-  display:flex;flex-direction:column;
 }
-.car-img{
-  height:260px;overflow:hidden;background:var(--sand2);
+.marquee-item::after{
+  content:'×';color:var(--border);font-size:14px;
 }
-.car-img img{
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ─── SECTION ─── */
+section{padding:100px 48px}
+.container{max-width:1280px;margin:0 auto}
+@media(max-width:720px){section{padding:72px 24px}}
+
+/* ─── INTRO ─── */
+.intro{border-bottom:1px solid var(--border-dark)}
+.intro-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;
+}
+.intro-lede{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(22px,3vw,36px);font-weight:700;
+  line-height:1.2;letter-spacing:-0.025em;
+  color:var(--black);margin-bottom:24px;
+}
+.intro-body{
+  font-size:15px;font-weight:300;color:var(--muted);
+  line-height:1.85;max-width:500px;
+}
+.intro-right{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border-dark)}
+.intro-feat{
+  background:var(--white);padding:28px 24px;
+  transition:background .2s;
+}
+.intro-feat:hover{background:var(--off)}
+.feat-n{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:var(--muted);letter-spacing:0.12em;
+  text-transform:uppercase;margin-bottom:12px;display:block;
+}
+.feat-h{
+  font-size:14px;font-weight:600;color:var(--black);
+  margin-bottom:6px;letter-spacing:-0.01em;
+}
+.feat-p{font-size:12px;font-weight:300;color:var(--muted);line-height:1.65}
+@media(max-width:768px){.intro-grid{grid-template-columns:1fr}.intro-right{display:none}}
+
+/* ─── SOLUTIONS ─── */
+.solutions-sec{background:var(--off);border-bottom:1px solid var(--border-dark)}
+.sec-header{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:64px;flex-wrap:wrap;gap:20px;
+}
+.sec-eyebrow{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;font-weight:400;letter-spacing:0.16em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:12px;
+}
+.sec-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(32px,5vw,60px);font-weight:800;
+  letter-spacing:-0.035em;line-height:1;color:var(--black);
+}
+.sec-count{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;color:var(--muted);letter-spacing:0.08em;
+  align-self:flex-end;
+}
+.sol-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border-dark);
+}
+.sol-card{
+  background:var(--off);display:flex;flex-direction:column;
+  transition:background .25s;
+}
+.sol-card:hover{background:var(--white)}
+.sol-img{
+  height:220px;overflow:hidden;background:var(--border);
+  position:relative;
+}
+.sol-img img{
   width:100%;height:100%;object-fit:cover;
-  transition:transform .5s ease;
-  filter:grayscale(.2);
+  filter:grayscale(1)contrast(1.08);
+  transition:transform .55s ease,filter .3s;
 }
-.car-slide:hover .car-img img{ transform:scale(1.04);filter:grayscale(0); }
-.car-body{ padding:28px 28px 32px;flex:1;display:flex;flex-direction:column; }
-.car-tag{
-  font-family:'JetBrains Mono',monospace;font-size:9px;
-  letter-spacing:.12em;text-transform:uppercase;color:var(--rust);
-  margin-bottom:10px;
+.sol-card:hover .sol-img img{transform:scale(1.05);filter:grayscale(0)contrast(1)}
+.sol-body{padding:28px 26px 32px;flex:1;display:flex;flex-direction:column}
+.sol-idx{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:var(--muted);letter-spacing:0.12em;
+  text-transform:uppercase;margin-bottom:14px;
 }
-.car-body h3{
-  font-family:'Fraunces',serif;font-size:22px;font-weight:700;
-  letter-spacing:-.02em;color:var(--ink);margin-bottom:10px;line-height:1.1;
+.sol-h{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:700;color:var(--black);
+  letter-spacing:-0.02em;line-height:1.15;margin-bottom:10px;
 }
-.car-body p{ font-size:13px;font-weight:300;color:var(--muted);line-height:1.75;flex:1; }
-.car-lnk{
-  margin-top:18px;font-family:'JetBrains Mono',monospace;
-  font-size:10px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--rust);border-bottom:1px solid rgba(181,66,10,.25);
-  padding-bottom:2px;width:fit-content;display:inline-block;
+.sol-p{font-size:13px;font-weight:300;color:var(--muted);line-height:1.7;flex:1;margin-bottom:18px}
+.sol-lnk{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--black);
+  display:inline-flex;align-items:center;gap:8px;
+  border-bottom:1px solid var(--border-dark);padding-bottom:2px;
+  width:fit-content;transition:gap .15s,border-color .15s;
+}
+.sol-card:hover .sol-lnk{gap:12px;border-color:var(--black)}
+@media(max-width:900px){.sol-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.sol-grid{grid-template-columns:1fr}}
+
+/* ─── DARK INTERLUDE ─── */
+.dark-band{
+  background:var(--black);color:var(--white);
+  border-top:none;border-bottom:none;
+}
+.band-inner{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+}
+.band-left h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,4.5vw,56px);font-weight:800;
+  letter-spacing:-0.03em;line-height:1.05;
+  color:var(--white);margin-bottom:24px;
+}
+.band-left p{
+  font-size:15px;font-weight:300;
+  color:rgba(248,246,242,.45);line-height:1.85;margin-bottom:10px;
+}
+.band-right{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:rgba(248,246,242,.07);
+}
+.band-feat{
+  background:rgba(248,246,242,.03);padding:28px;
+  transition:background .2s;
+}
+.band-feat:hover{background:rgba(248,246,242,.06)}
+.band-feat-n{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:rgba(248,246,242,.3);
+  letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;display:block;
+}
+.band-feat h4{
+  font-size:13px;font-weight:600;color:rgba(248,246,242,.85);
+  margin-bottom:6px;letter-spacing:-0.01em;
+}
+.band-feat p{font-size:12px;font-weight:300;color:rgba(248,246,242,.35);line-height:1.65}
+@media(max-width:768px){.band-inner{grid-template-columns:1fr}.band-right{display:none}}
+
+/* ─── ABOUT ─── */
+.about-sec{border-bottom:1px solid var(--border-dark)}
+.about-inner{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;
+}
+.about-left h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(36px,5.5vw,72px);font-weight:800;
+  letter-spacing:-0.03em;line-height:1.0;
+  color:var(--black);margin-bottom:28px;
+}
+.about-left p{
+  font-size:15px;font-weight:300;color:var(--muted);
+  line-height:1.85;margin-bottom:16px;
+}
+.about-pillars{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:var(--border-dark);margin-top:8px;
+}
+.a-pillar{background:var(--white);padding:28px 22px;transition:background .2s}
+.a-pillar:hover{background:var(--off)}
+.ap-n{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:var(--muted);letter-spacing:0.12em;
+  text-transform:uppercase;margin-bottom:10px;display:block;
+}
+.a-pillar h4{
+  font-size:13px;font-weight:600;color:var(--black);
+  margin-bottom:5px;letter-spacing:-0.01em;
+}
+.a-pillar p{font-size:12px;font-weight:300;color:var(--muted);line-height:1.65}
+@media(max-width:768px){.about-inner{grid-template-columns:1fr}}
+
+/* ─── AI SECTION ─── */
+.ai-sec{background:var(--off);border-bottom:1px solid var(--border-dark)}
+.ai-pair{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:var(--border-dark);margin-top:56px;
+}
+.ai-card{background:var(--off);padding:48px;transition:background .2s}
+.ai-card:hover{background:var(--white)}
+.ai-tag{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:16px;display:block;
+}
+.ai-card h3{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(20px,2.5vw,28px);font-weight:700;
+  letter-spacing:-0.025em;line-height:1.15;
+  color:var(--black);margin-bottom:14px;
+}
+.ai-card p{font-size:14px;font-weight:300;color:var(--muted);line-height:1.8;margin-bottom:22px}
+.ai-lnk{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--black);display:inline-flex;align-items:center;gap:8px;
+  border-bottom:1px solid var(--border-dark);padding-bottom:2px;
   transition:gap .15s,border-color .15s;
 }
-.car-slide:hover .car-lnk{ border-color:var(--rust); }
-.car-dots{
-  display:flex;gap:8px;justify-content:center;margin-top:24px;
-}
-.car-dot{
-  width:8px;height:8px;border-radius:50%;
-  background:var(--sand2);cursor:pointer;
-  transition:background .2s,transform .2s;border:none;
-}
-.car-dot.active{ background:var(--rust);transform:scale(1.3); }
+.ai-card:hover .ai-lnk{gap:12px;border-color:var(--black)}
+@media(max-width:640px){.ai-pair{grid-template-columns:1fr}}
 
-@media(max-width:700px){
-  .car-slide{ min-width:calc(100% - 0px); }
+/* ─── INDUSTRIES ─── */
+.ind-sec{border-bottom:1px solid var(--border-dark)}
+.ind-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:var(--border-dark);margin-top:56px;
 }
+.ind-card{
+  background:var(--white);
+  display:flex;flex-direction:column;
+  overflow:hidden;cursor:pointer;
+  transition:background .25s;
+}
+.ind-card:hover{background:var(--off)}
+.ind-img{
+  height:190px;overflow:hidden;position:relative;
+  background:var(--border);flex-shrink:0;
+}
+.ind-img img{
+  width:100%;height:100%;object-fit:cover;
+  filter:grayscale(1)contrast(1.08);
+  transition:transform .55s ease,filter .3s;
+}
+.ind-card:hover .ind-img img{
+  transform:scale(1.05);
+  filter:grayscale(0)contrast(1);
+}
+.ind-body{padding:20px 20px 24px;flex:1;display:flex;flex-direction:column;}
+.ind-body h3{
+  font-family:'Playfair Display',serif;
+  font-size:15px;font-weight:700;color:var(--black);
+  letter-spacing:-0.015em;margin-bottom:8px;line-height:1.2;
+}
+.ind-foot a{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:var(--muted);
+  letter-spacing:0.1em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:5px;
+  transition:color .15s,gap .15s;
+  border-bottom:1px solid var(--border-dark);padding-bottom:1px;
+}
+.ind-card:hover .ind-foot a{color:var(--black);gap:8px;border-color:var(--black)}
+.ind-ov{display:none}
+@media(max-width:900px){.ind-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.ind-img{height:160px;}}
 
-/* ── BRUTALIST CLIENT LOGO BANNER ── */
-.client-banner-sec{
-  background:var(--ink);
-  padding:0;
-  border-top:2px solid var(--rust);
-  border-bottom:2px solid var(--rust);
+/* ─── CLIENTS ─── */
+.clients-sec{background:var(--black);border-top:none}
+.clients-top{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:56px;flex-wrap:wrap;gap:20px;
+}
+.clients-top h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(32px,5vw,60px);font-weight:800;
+  letter-spacing:-0.035em;color:var(--white);
+}
+.clients-top p{font-size:13px;color:rgba(248,246,242,.3)}
+.clients-grid{
+  display:grid;grid-template-columns:repeat(9,1fr);gap:1px;
+  background:rgba(248,246,242,.06);border:1px solid rgba(248,246,242,.06);
+}
+.cl-item{
+  background:rgba(248,246,242,.02);
+  padding:26px 14px;
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  transition:background .2s;
+}
+.cl-item:hover{background:rgba(248,246,242,.05)}
+.cl-item img{
+  width:56px;height:36px;object-fit:contain;
+  filter:none;opacity:1;
+  transition:transform .3s,opacity .3s;
+}
+.cl-item:hover img{transform:scale(1.1);opacity:1;}
+.cl-item span{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:8px;color:rgba(248,246,242,.2);
+  text-align:center;letter-spacing:0.06em;text-transform:uppercase;
+}
+@media(max-width:900px){.clients-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* ─── CALISTA CLIENTS MARQUEE ─── */
+.calista-clients-sec{
+  background:var(--black);
+  padding:72px 0 64px;
+  border-top:1px solid rgba(248,246,242,.06);
+  border-bottom:1px solid rgba(248,246,242,.06);
   overflow:hidden;
 }
-.client-banner-label{
-  padding:40px 40px 0;
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;letter-spacing:.18em;text-transform:uppercase;
-  color:rgba(245,241,234,.25);
+.calista-clients-hdr{
+  padding:0 40px;max-width:1200px;margin:0 auto 44px;
+  display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
 }
-.client-banner-track-wrap{
-  overflow:hidden;padding:28px 0 36px;
-  position:relative;
+.calista-clients-hdr h3{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(22px,3.5vw,36px);font-weight:800;
+  letter-spacing:-.03em;color:var(--white);margin:0;
 }
-.client-banner-track{
-  display:flex;align-items:center;gap:0;
-  animation:bannerScroll 28s linear infinite;
-  width:max-content;
-}
-.client-banner-track:hover{ animation-play-state:paused; }
-@keyframes bannerScroll{
-  0%{transform:translateX(0);}
-  100%{transform:translateX(-50%);}
-}
-.client-logo-item{
-  display:flex;align-items:center;gap:0;
-  padding:0 48px;
-  border-right:1px solid rgba(245,241,234,.08);
-  flex-shrink:0;
-}
-.client-logo-item img{
-  height:52px;width:auto;max-width:140px;
-  object-fit:contain;
-  filter:grayscale(1) invert(1) brightness(.65);
-  transition:filter .3s,transform .3s;
-}
-.client-logo-item:hover img{
-  filter:grayscale(0) invert(0) brightness(1);
-  transform:scale(1.08);
-}
-.client-logo-name{
-  margin-left:16px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;font-weight:400;letter-spacing:.1em;
-  text-transform:uppercase;color:rgba(245,241,234,.35);
+.calista-tag{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(248,246,242,.3);
+  border:1px solid rgba(248,246,242,.12);
+  padding:3px 10px;border-radius:20px;
   white-space:nowrap;
 }
-
-/* ── CHAT LAUNCHER ── */
-.chat-launcher-wrap{
-  position:fixed;bottom:28px;right:28px;z-index:995;
-  display:flex;flex-direction:column;align-items:flex-end;gap:10px;
+/* Two-row marquee */
+.cal-row{
+  display:flex;gap:16px;margin-bottom:14px;
+  width:max-content;
 }
-.chat-panel{
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:16px;
-  width:240px;
-  display:flex;flex-direction:column;gap:8px;
-  opacity:0;transform:translateY(12px) scale(.95);
-  pointer-events:none;
-  transition:opacity .25s ease,transform .25s ease;
-  box-shadow:0 8px 32px rgba(20,18,16,.12);
+.cal-row-1{ animation:calScroll1 38s linear infinite; }
+.cal-row-2{ animation:calScroll2 42s linear infinite; }
+.cal-row-3{ animation:calScroll1 50s linear infinite; }
+@keyframes calScroll1{
+  0%  {transform:translateX(0);}
+  100%{transform:translateX(-50%);}
 }
-.chat-panel.open{
-  opacity:1;transform:translateY(0) scale(1);pointer-events:auto;
+@keyframes calScroll2{
+  0%  {transform:translateX(-50%);}
+  100%{transform:translateX(0);}
 }
-.chat-panel-title{
-  font-family:'JetBrains Mono',monospace;font-size:9px;
-  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
-  margin-bottom:4px;
-}
-.chat-option{
-  display:flex;align-items:center;gap:12px;
-  padding:12px 14px;border-radius:8px;
-  background:var(--cream);border:1px solid var(--border);
-  cursor:pointer;text-decoration:none;color:var(--ink);
-  transition:background .15s,border-color .15s;
-  font-size:13px;font-weight:500;
-}
-.chat-option:hover{ background:var(--sand);border-color:var(--rust); }
-.chat-option svg{ width:18px;height:18px;flex-shrink:0; }
-.chat-option-sub{ font-size:11px;font-weight:300;color:var(--muted);display:block;margin-top:2px; }
-.chat-fab{
-  width:54px;height:54px;border-radius:50%;
-  background:var(--rust);border:none;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 18px rgba(181,66,10,.4);
-  transition:background .15s,transform .2s;
-}
-.chat-fab:hover{ background:var(--rust2);transform:scale(1.08); }
-.chat-fab svg{ width:24px;height:24px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round; }
-.build-section{
-  position:relative;
-  background:#0d0b09;
-  border-top:1px solid rgba(181,66,10,.15);
-  border-bottom:1px solid rgba(181,66,10,.15);
-}
-.build-scene-wrap{
-  position:relative;
-  height:500vh;
-}
-.build-sticky{
-  position:sticky;top:0;
-  height:100vh;
-  display:flex;align-items:center;justify-content:center;
-  overflow:hidden;
-}
-.build-bg-grid{
-  position:absolute;inset:0;
-  background-image:
-    linear-gradient(rgba(181,66,10,.14) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(181,66,10,.14) 1px,transparent 1px),
-    linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
-  background-size:100px 100px,100px 100px,20px 20px,20px 20px;
-  pointer-events:none;
-}
-/* top eyebrow label */
-.build-header{
-  position:absolute;top:40px;left:0;right:0;
-  text-align:center;z-index:10;
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;letter-spacing:.18em;text-transform:uppercase;
-  color:rgba(245,241,234,.28);
-}
-/* progress bar */
-.build-progress-bar{
-  position:absolute;top:0;left:0;
-  height:2px;background:var(--rust);
-  width:0%;transition:width .05s linear;
-  z-index:20;
-}
-/* phase label bottom centre */
-.build-phase-lbl{
-  position:absolute;bottom:48px;left:0;right:0;
-  text-align:center;z-index:10;
-  font-family:'JetBrains Mono',monospace;
-  font-size:12px;letter-spacing:.12em;text-transform:uppercase;
-  color:rgba(181,66,10,.75);
-}
-.build-progress-pct{
-  position:absolute;bottom:28px;left:0;right:0;
-  text-align:center;z-index:10;
-  font-family:'JetBrains Mono',monospace;
-  font-size:9px;letter-spacing:.14em;
-  color:rgba(245,241,234,.2);
-}
-/* scroll hint */
-.build-scroll-hint{
-  position:absolute;bottom:60px;left:50%;
-  transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:8px;
-  z-index:10;pointer-events:none;
-  transition:opacity .5s;
-}
-.build-scroll-hint span{
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(245,241,234,.22);
-}
-.build-scroll-arrow{
-  width:1px;height:32px;
-  background:linear-gradient(to bottom,rgba(181,66,10,.5),transparent);
-  animation:buildArrow 1.8s ease-in-out infinite;
-}
-@keyframes buildArrow{
-  0%,100%{opacity:.3;transform:scaleY(1);}
-  50%{opacity:1;transform:scaleY(1.2);}
-}
-/* SVG stage wrapper */
-.build-stage{
-  position:relative;
-  display:flex;align-items:flex-end;justify-content:center;
-}
-/* ground rule */
-.build-ground{
-  position:absolute;
-  bottom:0;left:-20px;right:-20px;
-  height:2px;background:rgba(181,66,10,.5);
-}
-.build-gl-label{
-  position:absolute;bottom:8px;right:0;
-  font-family:'JetBrains Mono',monospace;font-size:9px;
-  letter-spacing:.1em;color:rgba(181,66,10,.4);text-transform:uppercase;
-}
-
-/* ── PERSISTENT BUILD SIDE PANEL (hero parallax) ── */
-.site-build-zone{
-  display:flex;
-  align-items:flex-start;
-  position:relative;
-}
-.site-sections-wrap{
-  flex:1;
-  min-width:0;
-  position:relative;
-  z-index:1;
-}
-.build-side-panel{
-  width:300px;
+.cal-logo{
   flex-shrink:0;
-  position:sticky;
-  top:66px;
-  height:calc(100vh - 66px);
-  background:#0d0b09;
-  border-left:1px solid rgba(181,66,10,.18);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  overflow:hidden;
-  z-index:10;
+  width:130px;height:64px;
+  background:rgba(255,255,255,.96);
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  padding:10px 14px;
+  box-shadow:0 2px 12px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.15);
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1), box-shadow .25s;
+  cursor:default;
 }
-.build-side-panel .build-bg-grid{
-  position:absolute;inset:0;
-  background-image:
-    linear-gradient(rgba(181,66,10,.14) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(181,66,10,.14) 1px,transparent 1px),
-    linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
-  background-size:80px 80px,80px 80px,16px 16px,16px 16px;
-  pointer-events:none;
-  z-index:0;
+.cal-logo:hover{
+  transform:scale(1.08) translateY(-3px);
+  box-shadow:0 8px 28px rgba(0,0,0,.35),0 2px 8px rgba(0,0,0,.2);
 }
-.build-side-panel canvas{
-  position:relative;z-index:1;
-  display:block;
+/* Bradman row — slightly different card tint to distinguish */
+.cal-logo-bradman{
+  background:rgba(255,255,255,.88);
+  border:1.5px solid rgba(248,246,242,.15);
 }
-.build-panel-header{
-  position:relative;z-index:1;
-  font-family:'JetBrains Mono',monospace;
-  font-size:9px;letter-spacing:.18em;text-transform:uppercase;
-  color:rgba(245,241,234,.25);
-  text-align:center;
+.cal-logo img{
+  width:100%;height:100%;object-fit:contain;
+  filter:none;opacity:1;
 }
-.build-panel-phase{
-  position:relative;z-index:1;
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;letter-spacing:.12em;text-transform:uppercase;
-  color:rgba(181,66,10,.85);
-  text-align:center;
-  min-height:18px;
+@media(max-width:720px){
+  .calista-clients-hdr{padding:0 24px;}
+  .cal-logo{width:100px;height:52px;}
 }
-.build-panel-pct{
-  position:relative;z-index:1;
-  font-family:'JetBrains Mono',monospace;
-  font-size:9px;letter-spacing:.14em;
-  color:rgba(245,241,234,.22);
-  text-align:center;
+
+/* ─── NEWS ─── */
+.news-sec{border-bottom:1px solid var(--border-dark)}
+.news-head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:56px;flex-wrap:wrap;gap:16px;
 }
-.build-panel-progress{
-  position:absolute;top:0;left:0;right:0;
-  height:2px;background:var(--rust);
-  width:0%;transition:width .05s linear;
-  z-index:20;
+.view-all-lnk{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);
+  display:inline-flex;align-items:center;gap:8px;
+  border-bottom:1px solid var(--border-dark);padding-bottom:2px;
+  transition:color .15s,border-color .15s;
 }
-.build-panel-scroll-hint{
-  position:relative;z-index:1;
-  display:flex;flex-direction:column;align-items:center;gap:6px;
-  transition:opacity .5s;
+.view-all-lnk:hover{color:var(--black);border-color:var(--black)}
+.news-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border-dark);
 }
-.build-panel-scroll-hint span{
-  font-family:'JetBrains Mono',monospace;
-  font-size:9px;letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(245,241,234,.18);
+.news-card{background:var(--white);padding:36px;transition:background .2s}
+.news-card:hover{background:var(--off)}
+.news-dt{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:var(--muted);letter-spacing:0.12em;
+  text-transform:uppercase;margin-bottom:16px;display:block;
 }
-.build-panel-arrow{
-  width:1px;height:28px;
-  background:linear-gradient(to bottom,rgba(181,66,10,.5),transparent);
-  animation:buildArrow 1.8s ease-in-out infinite;
+.news-card h3{
+  font-family:'Playfair Display',serif;
+  font-size:18px;font-weight:700;color:var(--black);
+  letter-spacing:-0.02em;line-height:1.25;margin-bottom:12px;
 }
-@media(max-width:1280px){
-  .build-side-panel{width:240px;}
+.news-card p{font-size:13px;font-weight:300;color:var(--muted);line-height:1.7}
+@media(max-width:768px){.news-grid{grid-template-columns:1fr}}
+
+/* ─── CAREERS ─── */
+.careers-sec{background:var(--off);border-bottom:1px solid var(--border-dark)}
+.careers-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border-dark);margin-top:56px;
 }
-@media(max-width:1000px){
-  .build-side-panel{display:none;}
+.career-card{background:var(--off);padding:40px;transition:background .2s}
+.career-card:hover{background:var(--white)}
+.career-n{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:var(--muted);letter-spacing:0.12em;
+  text-transform:uppercase;margin-bottom:14px;display:block;
 }
+.career-card h3{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:700;color:var(--black);
+  letter-spacing:-0.02em;margin-bottom:10px;
+}
+.career-card p{font-size:13px;font-weight:300;color:var(--muted);line-height:1.75;margin-bottom:22px}
+.career-lnk{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--black);
+  display:inline-flex;align-items:center;gap:8px;
+  border-bottom:1px solid var(--border-dark);padding-bottom:2px;
+  transition:gap .15s,border-color .15s;
+}
+.career-card:hover .career-lnk{gap:12px;border-color:var(--black)}
+@media(max-width:768px){.careers-grid{grid-template-columns:1fr}}
+
+/* ─── CONTACT ─── */
+.contact-sec{background:var(--black);color:var(--white)}
+.contact-inner{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;
+}
+.contact-inner h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(36px,5vw,66px);font-weight:800;
+  letter-spacing:-0.035em;line-height:1.0;
+  color:var(--white);margin-bottom:20px;
+}
+.contact-inner>div>p{
+  font-size:15px;font-weight:300;
+  color:rgba(248,246,242,.4);line-height:1.8;margin-bottom:32px;
+}
+.contact-info-item{
+  display:flex;align-items:center;gap:12px;margin-bottom:12px;
+}
+.contact-info-item svg{width:15px;height:15px;stroke:rgba(248,246,242,.3);flex-shrink:0}
+.contact-info-item span{font-size:13px;font-weight:300;color:rgba(248,246,242,.4)}
+.frm-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.frm-f{margin-bottom:10px}
+.frm-f input,.frm-f textarea{
+  width:100%;background:rgba(248,246,242,.06);
+  border:1px solid rgba(248,246,242,.1);
+  color:var(--white);font-family:'Epilogue',sans-serif;
+  font-size:14px;font-weight:300;padding:13px 16px;
+  outline:none;transition:border-color .15s;border-radius:0;
+}
+.frm-f input::placeholder,.frm-f textarea::placeholder{color:rgba(248,246,242,.2)}
+.frm-f input:focus,.frm-f textarea:focus{border-color:rgba(248,246,242,.4)}
+.frm-f textarea{resize:vertical;min-height:110px}
+.frm-submit{
+  width:100%;background:var(--white);color:var(--black);
+  font-family:'Epilogue',sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:0.1em;text-transform:uppercase;
+  padding:15px;border:none;cursor:pointer;
+  transition:opacity .15s;margin-top:4px;
+}
+.frm-submit:hover{opacity:.85}
+.frm-note{font-size:11px;font-weight:300;color:rgba(248,246,242,.2);margin-top:12px;line-height:1.6}
+@media(max-width:768px){.contact-inner{grid-template-columns:1fr}.frm-row{grid-template-columns:1fr}}
+
+/* ─── FOOTER ─── */
+footer{
+  background:#060606;padding:48px 48px 28px;
+  border-top:1px solid rgba(248,246,242,.06);
+}
+.footer-inner{max-width:1280px;margin:0 auto}
+.footer-top{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px;
+}
+.footer-logo{
+  display:block;margin-bottom:12px;
+  font-family:'Playfair Display',serif;
+  font-size:17px;font-weight:800;
+  letter-spacing:-0.02em;color:rgba(248,246,242,.8);
+}
+.footer-logo-r{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:8px;font-weight:400;
+  color:rgba(248,246,242,.3);
+  vertical-align:super;margin-left:1px;
+}
+.footer-brand p{font-size:13px;font-weight:300;color:rgba(248,246,242,.28);line-height:1.65;margin-bottom:20px}
+.footer-socs{display:flex;gap:10px}
+.footer-soc{
+  width:32px;height:32px;border:1px solid rgba(248,246,242,.08);
+  display:flex;align-items:center;justify-content:center;
+  transition:border-color .15s;
+}
+.footer-soc:hover{border-color:rgba(248,246,242,.22)}
+.footer-soc svg{width:13px;height:13px;stroke:rgba(248,246,242,.35)}
+.footer-col h4{
+  font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.14em;
+  text-transform:uppercase;color:rgba(248,246,242,.25);margin-bottom:16px;
+}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:8px}
+.footer-col a{font-size:13px;font-weight:300;color:rgba(248,246,242,.4);transition:color .15s}
+.footer-col a:hover{color:rgba(248,246,242,.85)}
+.footer-bottom{
+  border-top:1px solid rgba(248,246,242,.06);padding-top:20px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+}
+.footer-bottom p{font-size:11px;font-weight:300;color:rgba(248,246,242,.18)}
+.footer-legal{display:flex;gap:20px}
+.footer-legal a{font-size:11px;font-weight:300;color:rgba(248,246,242,.18);transition:color .15s}
+.footer-legal a:hover{color:rgba(248,246,242,.5)}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.footer-top{grid-template-columns:1fr};footer{padding:40px 24px 24px}}
+
+/* ─── WA ─── */
+.wa{
+  position:fixed;bottom:28px;right:28px;z-index:99;
+  width:50px;height:50px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 18px rgba(37,211,102,.3);transition:transform .2s;
+}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:22px;height:22px;stroke:#fff}
+
+/* ─── REVEAL ─── */
+.r{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.r.on{opacity:1;transform:none}
+.r1{transition-delay:.07s}.r2{transition-delay:.14s}
+.r3{transition-delay:.21s}.r4{transition-delay:.28s}
+.r5{transition-delay:.35s}.r6{transition-delay:.42s}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-inner">
-    <a href="/" class="nav-logo">
-      <img src="https://noelinfrastructures.com/assets/images/logo1.png" alt="Noel Infrastructures"/>
-    </a>
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#projects" class="has-sub">Projects
-        <div class="subnav">
-          <a href="#projects">Ongoing</a>
-          <a href="#portfolio">Completed</a>
-        </div>
-      </a>
-      <a href="#about">About</a>
-      <a href="#contact">Awards</a>
-    </div>
-    <div style="display:flex;align-items:center;gap:12px;">
-      <button class="dm-toggle" id="dmToggle" aria-label="Toggle dark mode">
-        <span class="dm-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </span>
-      </button>
-      <a href="#contact" class="nav-cta">Contact Us</a>
-    </div>
-    <button class="nav-mob" aria-label="Menu">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
+  <a href="/" class="logo">Bradman<span class="logo-r">®</span></a>
+  <div class="nav-links">
+    <a href="#solutions">Solutions</a>
+    <a href="#industries">Industries</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
   </div>
+  <a href="#contact" class="nav-cta">Contact</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-grid"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-inner">
-    <div class="hero-tag">Since 1990 — EPC &amp; Construction Excellence</div>
-    <h1>
-      <span class="hero-word w1">Innovative</span><br>
-      <span class="hero-word w2">Construction.</span><br>
-      <em class="hero-word w3">Reliable Fabrication.</em>
-    </h1>
+
+  <!-- Background image carousel -->
+  <div class="hero-carousel" id="heroCarousel">
+    <div class="hero-slide active">
+      <img src="https://bradmantechnology.netlify.app/images/industries/airports.jpg" alt="" aria-hidden="true"/>
+    </div>
+    <div class="hero-slide">
+      <img src="https://bradmantechnology.netlify.app/images/industries/manufacturing.jpg" alt="" aria-hidden="true"/>
+    </div>
+    <div class="hero-slide">
+      <img src="https://bradmantechnology.netlify.app/images/industries/healthcare.jpg" alt="" aria-hidden="true"/>
+    </div>
+    <div class="hero-slide">
+      <img src="https://bradmantechnology.netlify.app/images/solutions/cctv-surveillance.jpg" alt="" aria-hidden="true"/>
+    </div>
+    <div class="hero-slide">
+      <img src="https://bradmantechnology.netlify.app/images/industries/commercial-complex.jpg" alt="" aria-hidden="true"/>
+    </div>
+    <div class="hero-slide">
+      <img src="https://bradmantechnology.netlify.app/images/solutions/scada.jpg" alt="" aria-hidden="true"/>
+    </div>
   </div>
-  <!-- Hero project image carousel -->
-  <div class="hero-car" id="heroCar">
-    <div class="hero-car-track" id="heroCarTrack"></div>
+  <div class="hero-overlay"></div>
+
+  <!-- Side dots -->
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" aria-label="Slide 1"></button>
+    <button class="hero-dot" aria-label="Slide 2"></button>
+    <button class="hero-dot" aria-label="Slide 3"></button>
+    <button class="hero-dot" aria-label="Slide 4"></button>
+    <button class="hero-dot" aria-label="Slide 5"></button>
+    <button class="hero-dot" aria-label="Slide 6"></button>
+  </div>
+  <div class="hero-body">
+    <div class="hero-eyebrow">IT Technology Solutions — IoT &amp; Automation</div>
+    <h1><span class="hero-brand" id="hero-brand-word">Bradman</span><span class="hero-brand-r">®</span><br><span class="hero-sub-word">Technologies</span></h1>
   </div>
   <div class="hero-foot">
-    <div class="hfc">
-      <span class="hfc-lbl">Mission</span>
-      <span class="hfc-val">Delivering exceptional construction and steel fabrication solutions built to exceed expectations and last</span>
+    <div class="hero-foot-cell">
+      <span class="hf-label">Tagline</span>
+      <span class="hf-val">for a connected and<br>resilient world</span>
     </div>
-    <div class="hfc">
-      <span class="hfc-lbl">Expertise</span>
-      <span class="hfc-val">EPC Projects · Railways · Facades · Modular Systems · Renewable Energy</span>
+    <div class="hero-foot-cell">
+      <span class="hf-label">Description</span>
+      <span class="hf-val">Breakthrough solutions that empower organisations to thrive in an ever-evolving landscape</span>
     </div>
-    <div class="hfc">
-      <span class="hfc-lbl">Explore</span>
-      <a href="#services" class="hfc-cta">Our Services →</a>
-      <a href="#contact" class="hfc-cta" style="margin-top:10px;">Contact Us →</a>
+    <div class="hero-foot-cell">
+      <span class="hf-label">Explore</span>
+      <a href="#solutions" class="hf-cta">Our Solutions →</a>
+      <a href="#industries" class="hf-cta" style="margin-top:10px">Our Industries →</a>
     </div>
   </div>
 </section>
 
-<!-- STATS STRIP -->
-<div class="stats-strip">
-  <div class="stats-inner">
-    <div class="stat-cell">
-      <div class="stat-n">35+</div>
-      <div class="stat-l">Years of<br>Excellence</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-n">650M</div>
-      <div class="stat-l">AUD Pipeline<br>2025–2028</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-n">16K+</div>
-      <div class="stat-l">m² Annual<br>Glass Capacity</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-n">3K</div>
-      <div class="stat-l">Modular Units<br>per Year per Bay</div>
-    </div>
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="marquee-item">IoT Systems &amp; Sensors</div>
+    <div class="marquee-item">E-Surveillance &amp; CCTV Analytics</div>
+    <div class="marquee-item">Automation &amp; BMS</div>
+    <div class="marquee-item">Access Control &amp; Security</div>
+    <div class="marquee-item">AI Voice Integration</div>
+    <div class="marquee-item">SCADA / Industrial Automation</div>
+    <div class="marquee-item">Smart Security</div>
+    <div class="marquee-item">IoT Systems &amp; Sensors</div>
+    <div class="marquee-item">E-Surveillance &amp; CCTV Analytics</div>
+    <div class="marquee-item">Automation &amp; BMS</div>
+    <div class="marquee-item">Access Control &amp; Security</div>
+    <div class="marquee-item">AI Voice Integration</div>
+    <div class="marquee-item">SCADA / Industrial Automation</div>
+    <div class="marquee-item">Smart Security</div>
   </div>
 </div>
 
-
-<!-- PERSISTENT BUILD ANIMATION ZONE — sticky panel visible the entire scroll until contact -->
-<div class="site-build-zone" id="siteBuildZone">
-<div class="site-sections-wrap" id="siteSectionsWrap">
-
-
-
-<!-- COMPANY LOGO BANNER -->
-<div class="co-banner-sec">
-  <p class="co-banner-eyebrow">Our clients &amp; partners</p>
-  <div class="co-banner-track-wrap">
-    <div class="co-banner-track">
-      <div class="co-banner-item" style="--acc:#b5420a;--acct:#fff;">TRIL<br><span>Ramanujam IT Park</span></div>
-      <div class="co-banner-item" style="--acc:#1d4ed8;--acct:#fff;">OBEROI<br><span>Eternia Tower</span></div>
-      <div class="co-banner-item" style="--acc:#15803d;--acct:#fff;">WIPRO<br><span>Mahindra SEZ</span></div>
-      <div class="co-banner-item" style="--acc:#7c3aed;--acct:#fff;">USHERA<br><span>Sales Gallery</span></div>
-      <div class="co-banner-item" style="--acc:#b45309;--acct:#fff;">MASCAR<br><span>Brisbane</span></div>
-      <div class="co-banner-item" style="--acc:#0e7490;--acct:#fff;">ARBT<br><span>Building Products</span></div>
-      <div class="co-banner-item" style="--acc:#be185d;--acct:#fff;">DYNAMIC SS<br><span>Engineering</span></div>
-      <div class="co-banner-item" style="--acc:#1e293b;--acct:#f5f1ea;">JAFZA<br><span>UAE Megafactory</span></div>
-      <!-- duplicate for seamless loop -->
-      <div class="co-banner-item" style="--acc:#b5420a;--acct:#fff;">TRIL<br><span>Ramanujam IT Park</span></div>
-      <div class="co-banner-item" style="--acc:#1d4ed8;--acct:#fff;">OBEROI<br><span>Eternia Tower</span></div>
-      <div class="co-banner-item" style="--acc:#15803d;--acct:#fff;">WIPRO<br><span>Mahindra SEZ</span></div>
-      <div class="co-banner-item" style="--acc:#7c3aed;--acct:#fff;">USHERA<br><span>Sales Gallery</span></div>
-      <div class="co-banner-item" style="--acc:#b45309;--acct:#fff;">MASCAR<br><span>Brisbane</span></div>
-      <div class="co-banner-item" style="--acc:#0e7490;--acct:#fff;">ARBT<br><span>Building Products</span></div>
-      <div class="co-banner-item" style="--acc:#be185d;--acct:#fff;">DYNAMIC SS<br><span>Engineering</span></div>
-      <div class="co-banner-item" style="--acc:#1e293b;--acct:#f5f1ea;">JAFZA<br><span>UAE Megafactory</span></div>
-    </div>
-  </div>
-</div>
-
-<section class="intro-sec" id="about">
+<!-- INTRO -->
+<section class="intro">
   <div class="container">
     <div class="intro-grid">
       <div class="r">
-        <div class="eyebrow">Who We Are</div>
-        <p class="intro-lede">Driven by Quality,<br>Powered by Expertise</p>
-        <p class="intro-body">Combining efficient construction and precise fabrication to create robust, reliable structures. Since 1990, NOEL Group has been a leader in traffic infrastructure, energy, and media, completing landmark projects across India, Australia and the UAE.</p>
-        <p class="intro-body">A pioneer under the JNNSM scheme, NOEL executed India's first 1MW solar plant in 2011, driven by a vision to deliver innovation and quality in infrastructure.</p>
+        <p class="intro-lede">Empowering businesses through intelligent technology solutions</p>
+        <p class="intro-body">We believe that technology should be an enabler, not a barrier. Our comprehensive suite of solutions transforms how businesses operate, making them more efficient, secure, and future-ready. From IoT systems to AI-powered analytics, we deliver innovation that drives real results.</p>
       </div>
-      <div class="intro-feats r d2">
-        <div class="i-feat">
-          <span class="i-feat-n">01</span>
-          <h4>Ongoing Projects</h4>
-          <p>We're excited to bring projects to life and will continue to provide updates as construction progresses.</p>
+      <div class="intro-right r r1">
+        <div class="intro-feat">
+          <span class="feat-n">01</span>
+          <p class="feat-h">Practical Innovation</p>
+          <p class="feat-p">We build solutions that solve real problems today and set you up for success tomorrow.</p>
         </div>
-        <div class="i-feat">
-          <span class="i-feat-n">02</span>
-          <h4>Proven Technology</h4>
-          <p>With a track record of successful projects in Australia, our technology is both reliable and innovative.</p>
+        <div class="intro-feat">
+          <span class="feat-n">02</span>
+          <p class="feat-h">AI That Works</p>
+          <p class="feat-p">Our AI tools analyze data and provide insights that actually matter to your business.</p>
         </div>
-        <div class="i-feat">
-          <span class="i-feat-n">03</span>
-          <h4>Strategic Partnerships</h4>
-          <p>In talks with the Queensland government to achieve their ambitious target of 1 million homes by 2046.</p>
+        <div class="intro-feat">
+          <span class="feat-n">03</span>
+          <p class="feat-h">Industry Know-How</p>
+          <p class="feat-p">Years of experience across industries with deep technical knowledge every project.</p>
         </div>
-        <div class="i-feat">
-          <span class="i-feat-n">04</span>
-          <h4>Project Pipeline</h4>
-          <p>Development pipeline worth 650 million AUD and 150 million AUD in secured construction orders for 2025–2028.</p>
+        <div class="intro-feat">
+          <span class="feat-n">04</span>
+          <p class="feat-h">Proven Excellence</p>
+          <p class="feat-p">Trusted by leading organizations across multiple industries worldwide.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES — Logarithmic Spiral Fan (macOS Dock arc) -->
-<section class="services-sec" id="services">
-  <div class="container">
-    <div class="svc-fan-wrap">
-
-      <!-- LEFT: title column -->
-      <div class="svc-fan-left">
-        <div class="eyebrow r">What We Offer</div>
-        <h2 class="sec-h r d1">Our<br>Services</h2>
-        <p class="sec-p r d2">Comprehensive construction and fabrication solutions delivered with precision since 1990.</p>
-        <span class="svc-count-tag r d3">06 Services</span>
-      </div>
-
-      <!-- RIGHT: logarithmic spiral fan area -->
-      <div class="svc-fan-area" id="svcFanArea">
-        <!-- SVG arc & connector guides -->
-        <svg class="svc-arc-svg" id="svcArcSvg" aria-hidden="true"></svg>
-        <!-- Anchor point (spiral origin) -->
-        <div class="svc-anchor-dot" id="svcAnchorDot"></div>
-
-        <!-- Fan item 1 -->
-        <div class="sfi" data-sfi="0">
-          <div class="sfi-bubble">
-            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
-            <span class="sfi-badge">01</span>
-          </div>
-          <span class="sfi-name">EPC Projects</span>
-          <div class="sfi-tip">Turnkey solutions, concept to completion</div>
-        </div>
-
-        <!-- Fan item 2 -->
-        <div class="sfi" data-sfi="1">
-          <div class="sfi-bubble">
-            <svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/><circle cx="7" cy="6" r="1" fill="currentColor" stroke="none"/><circle cx="7" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="7" cy="18" r="1" fill="currentColor" stroke="none"/></svg>
-            <span class="sfi-badge">02</span>
-          </div>
-          <span class="sfi-name">Railways &amp; Airport</span>
-          <div class="sfi-tip">Stations, tracks &amp; connectivity</div>
-        </div>
-
-        <!-- Fan item 3 -->
-        <div class="sfi" data-sfi="2">
-          <div class="sfi-bubble">
-            <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg>
-            <span class="sfi-badge">03</span>
-          </div>
-          <span class="sfi-name">Renewable Energy</span>
-          <div class="sfi-tip">Solar, wind &amp; hydropower</div>
-        </div>
-
-        <!-- Fan item 4 -->
-        <div class="sfi" data-sfi="3">
-          <div class="sfi-bubble">
-            <svg viewBox="0 0 24 24"><path d="M2 20h20M4 20V8l8-6 8 6v12"/><path d="M9 20v-6h6v6"/></svg>
-            <span class="sfi-badge">04</span>
-          </div>
-          <span class="sfi-name">General Contracting</span>
-          <div class="sfi-tip">Commercial, residential &amp; industrial</div>
-        </div>
-
-        <!-- Fan item 5 -->
-        <div class="sfi" data-sfi="4">
-          <div class="sfi-bubble">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-            <span class="sfi-badge">05</span>
-          </div>
-          <span class="sfi-name">Modular Systems</span>
-          <div class="sfi-tip">ARBT licensed modular technology</div>
-        </div>
-
-        <!-- Fan item 6 -->
-        <div class="sfi" data-sfi="5">
-          <div class="sfi-bubble">
-            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            <span class="sfi-badge">06</span>
-          </div>
-          <span class="sfi-name">Facades</span>
-          <div class="sfi-tip">Design, fabrication &amp; installation</div>
-        </div>
-
-      </div><!-- /.svc-fan-area -->
-    </div><!-- /.svc-fan-wrap -->
+<!-- CALISTA CLIENT LOGOS -->
+<section class="calista-clients-sec">
+  <div class="calista-clients-hdr">
+    <h3>Trusted by Industry Leaders</h3>
+    <span class="calista-tag">via Calista — sister company of Bradman Technologies</span>
+  </div>
+  <!-- Row 1 — scrolls left -->
+  <div style="overflow:hidden;margin-bottom:14px;">
+    <div class="cal-row cal-row-1">
+      <div class="cal-logo"><img src="https://www.calistain.com/client/AAI-1.jpg" alt="AAI"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Allison-1.jpg" alt="Allison"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Asian%20paints-1.jpg" alt="Asian Paints"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/CII-2.jpg" alt="CII"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Daimler-1.jpg" alt="Daimler"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/ebay-1.jpg" alt="eBay"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/GMR-1.jpg" alt="GMR"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/IIT-1.jpg" alt="IIT"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Kauvery-1.jpg" alt="Kauvery Hospital"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Lt-1.jpg" alt="L&amp;T"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Matuti-1.jpg" alt="Maruti"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/paypal-1.jpg" alt="PayPal"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/TCS-1.jpg" alt="TCS"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/TVS-1.jpg" alt="TVS"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/bajaj.jpg" alt="Bajaj"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/TMB-1.jpg" alt="TMB"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/sun-tv.jpg" alt="Sun TV"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/VIT-1.jpg" alt="VIT"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Visteion-1.jpg" alt="Visteon"/></div>
+      <!-- duplicate for seamless loop -->
+      <div class="cal-logo"><img src="https://www.calistain.com/client/AAI-1.jpg" alt="AAI"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Allison-1.jpg" alt="Allison"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Asian%20paints-1.jpg" alt="Asian Paints"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/CII-2.jpg" alt="CII"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Daimler-1.jpg" alt="Daimler"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/ebay-1.jpg" alt="eBay"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/GMR-1.jpg" alt="GMR"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/IIT-1.jpg" alt="IIT"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Kauvery-1.jpg" alt="Kauvery Hospital"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Lt-1.jpg" alt="L&amp;T"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Matuti-1.jpg" alt="Maruti"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/paypal-1.jpg" alt="PayPal"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/TCS-1.jpg" alt="TCS"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/TVS-1.jpg" alt="TVS"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/bajaj.jpg" alt="Bajaj"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/TMB-1.jpg" alt="TMB"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/sun-tv.jpg" alt="Sun TV"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/VIT-1.jpg" alt="VIT"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Visteion-1.jpg" alt="Visteon"/></div>
+    </div>
+  </div>
+  <!-- Row 2 — scrolls right -->
+  <div style="overflow:hidden;margin-bottom:14px;">
+    <div class="cal-row cal-row-2">
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Lakshmi%20bank.jpg" alt="Lakshmi Bank"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Ramco%20cemnts-1.jpg" alt="Ramco Cements"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Sims-3.jpg" alt="Sims"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/SL%20lumax-1.jpg" alt="SL Lumax"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/TIE1.jpg" alt="TiE"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Gemasa-1.jpg" alt="Gemasa"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/DAN.jpg" alt="DAN"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/DAE-1.jpg" alt="DAE"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Bonfi-1.jpg" alt="Bonfi"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/cong-1.jpg" alt="Cognizant"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/harly-1.jpg" alt="Harley Davidson"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Incom2-2.jpg" alt="Incom"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/izuzu%20copy-1.png" alt="Isuzu"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/himt.jpg" alt="HIMT"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/rgv.jpg" alt="RGV"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/V%20IS%20-1.jpg" alt="Vistara"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Ashpk%20ly-1.jpg" alt="Ashpkly"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/download%20(2).jpg" alt="Client"/></div>
+      <!-- duplicate for seamless loop -->
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Lakshmi%20bank.jpg" alt="Lakshmi Bank"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Ramco%20cemnts-1.jpg" alt="Ramco Cements"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Sims-3.jpg" alt="Sims"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/SL%20lumax-1.jpg" alt="SL Lumax"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/TIE1.jpg" alt="TiE"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Gemasa-1.jpg" alt="Gemasa"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/DAN.jpg" alt="DAN"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/DAE-1.jpg" alt="DAE"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Bonfi-1.jpg" alt="Bonfi"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/cong-1.jpg" alt="Cognizant"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/harly-1.jpg" alt="Harley Davidson"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Incom2-2.jpg" alt="Incom"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/izuzu%20copy-1.png" alt="Isuzu"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/himt.jpg" alt="HIMT"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/rgv.jpg" alt="RGV"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/V%20IS%20-1.jpg" alt="Vistara"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/Ashpk%20ly-1.jpg" alt="Ashpkly"/></div>
+      <div class="cal-logo"><img src="https://www.calistain.com/client/download%20(2).jpg" alt="Client"/></div>
+    </div>
+  </div>
+  <!-- Row 3 — Bradman direct clients, scrolls left at slower speed -->
+  <div style="overflow:hidden;">
+    <div class="cal-row cal-row-3">
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/akarsh_designs_logo.jpg" alt="Akarsh Specialities"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/asian%20paints.jpg" alt="Asian Paints"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/BNI.jpg" alt="BNI"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/DEEPAM%20LOGISTICS.jpg" alt="Deepam Logistics"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/DOLPHIN.jpg" alt="Dolphin"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/EARTH%20SENSE.jpg" alt="Earth Sense"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/GETEK%20ELECTRONICS.jpg" alt="Getek Electronics"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/SAVEETHA.jpg" alt="Saveetha"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/ZEBLON.jpg" alt="Zeblon"/></div>
+      <!-- duplicate ×3 to fill the row -->
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/akarsh_designs_logo.jpg" alt="Akarsh Specialities"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/asian%20paints.jpg" alt="Asian Paints"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/BNI.jpg" alt="BNI"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/DEEPAM%20LOGISTICS.jpg" alt="Deepam Logistics"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/DOLPHIN.jpg" alt="Dolphin"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/EARTH%20SENSE.jpg" alt="Earth Sense"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/GETEK%20ELECTRONICS.jpg" alt="Getek Electronics"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/SAVEETHA.jpg" alt="Saveetha"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/ZEBLON.jpg" alt="Zeblon"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/akarsh_designs_logo.jpg" alt="Akarsh Specialities"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/asian%20paints.jpg" alt="Asian Paints"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/BNI.jpg" alt="BNI"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/DEEPAM%20LOGISTICS.jpg" alt="Deepam Logistics"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/DOLPHIN.jpg" alt="Dolphin"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/EARTH%20SENSE.jpg" alt="Earth Sense"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/GETEK%20ELECTRONICS.jpg" alt="Getek Electronics"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/SAVEETHA.jpg" alt="Saveetha"/></div>
+      <div class="cal-logo cal-logo-bradman"><img src="https://bradmantechnology.netlify.app/images/clients/ZEBLON.jpg" alt="Zeblon"/></div>
+    </div>
   </div>
 </section>
 
-<!-- ONGOING PROJECTS -->
-<section class="projects-sec" id="projects">
+<!-- STATS -->
+<section class="stats-sec">
   <div class="container">
-    <div class="proj-hdr">
+    <div class="stats-header">
+      <p class="sec-eyebrow r" style="color:rgba(248,246,242,.3);">By the numbers</p>
+      <h2 class="stats-title r r1">Delivering results<br>that speak for themselves</h2>
+    </div>
+    <div class="stats-grid">
+
+      <div class="stat-card r r1">
+        <div class="stat-bg-char">15</div>
+        <div class="stat-card-top">
+          <span class="stat-label">Years of Domain Expertise</span>
+          <span class="stat-tag">Experience</span>
+        </div>
+        <div>
+          <div class="stat-num" data-target="15" data-suffix="+">0<sup>+</sup></div>
+          <p class="stat-sub">Over a decade and a half driving technology transformation</p>
+        </div>
+      </div>
+
+      <div class="stat-card r r2">
+        <div class="stat-bg-char">16</div>
+        <div class="stat-card-top">
+          <span class="stat-label">Sectors Covered</span>
+          <span class="stat-tag">Reach</span>
+        </div>
+        <div>
+          <div class="stat-num" data-target="16" data-suffix="+">0<sup>+</sup></div>
+          <p class="stat-sub">Airports, manufacturing, oil &amp; gas, healthcare, marine &amp; more</p>
+        </div>
+      </div>
+
+      <div class="stat-card r r3">
+        <div class="stat-bg-char">40</div>
+        <div class="stat-card-top">
+          <span class="stat-label">Major Clients</span>
+          <span class="stat-tag">Trust</span>
+        </div>
+        <div>
+          <div class="stat-num" data-target="40" data-suffix="+">0<sup>+</sup></div>
+          <p class="stat-sub">Including AAI, TCS, Cognizant, L&amp;T, Maruti &amp; PayPal</p>
+        </div>
+      </div>
+
+      <div class="stat-card r r4">
+        <div class="stat-bg-char">24</div>
+        <div class="stat-card-top">
+          <span class="stat-label">Support &amp; Monitoring</span>
+          <span class="stat-tag">Uptime</span>
+        </div>
+        <div>
+          <div class="stat-num" data-target="24" data-suffix="/7">0<sup>/7</sup></div>
+          <p class="stat-sub">Round-the-clock system monitoring &amp; support</p>
+        </div>
+      </div>
+
+    </div>
+    <p class="stats-source-note">* Statistics sourced from Calista — a sister company of Bradman Technologies</p>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section class="solutions-sec" id="solutions">
+  <div class="container">
+    <div class="sec-header">
       <div>
-        <div class="eyebrow r">Work in Progress</div>
-        <h2 class="sec-h r d1">Ongoing Projects</h2>
+        <p class="sec-eyebrow r">What We Offer</p>
+        <h2 class="sec-title r r1">Our Solutions</h2>
       </div>
+      <span class="sec-count r r2">06 Solutions</span>
     </div>
-    <div class="proj-grid">
-      <div class="proj-card r d1">
-        <div class="proj-img">
-          <img src="https://noelinfrastructures.com/assets/images/infra-slide1.jpg" alt="Nandhambakkam TIDCO" loading="lazy"/>
+    <div class="sol-grid">
+      <div class="sol-card r r1">
+        <div class="sol-img">
+          <img src="https://bradmantechnology.netlify.app/images/solutions/iot-systems.jpg" alt="IoT Systems" loading="lazy"/>
         </div>
-        <div class="proj-body">
-          <span class="proj-tag">Ongoing Project</span>
-          <h3>Nandhambakkam TIDCO Site Work</h3>
-          <a href="https://noelinfrastructures.com/nandambakkam-details.php" class="proj-lnk">View Project →</a>
-        </div>
-      </div>
-      <div class="proj-card r d2">
-        <div class="proj-img">
-          <img src="https://noelinfrastructures.com/assets/images/infra-slide2.jpg" alt="Ethiraj College" loading="lazy"/>
-        </div>
-        <div class="proj-body">
-          <span class="proj-tag">Ongoing Project</span>
-          <h3>Ethiraj College Site Work</h3>
-          <a href="https://noelinfrastructures.com/ethiraj-details.php" class="proj-lnk">View Project →</a>
+        <div class="sol-body">
+          <span class="sol-idx">SOL — 01</span>
+          <h3 class="sol-h">IoT Systems &amp; Sensors</h3>
+          <p class="sol-p">Comprehensive IoT solutions connecting devices and sensors for real-time monitoring and data analytics.</p>
+          <a href="/solutions/iot-systems" class="sol-lnk">Learn more →</a>
         </div>
       </div>
-      <div class="proj-card r d3">
-        <div class="proj-img">
-          <img src="https://noelinfrastructures.com/assets/images/infra-slide3.jpg" alt="Villivakkam STP" loading="lazy"/>
+      <div class="sol-card r r2">
+        <div class="sol-img">
+          <img src="https://bradmantechnology.netlify.app/images/solutions/cctv-surveillance.jpg" alt="E-Surveillance" loading="lazy"/>
         </div>
-        <div class="proj-body">
-          <span class="proj-tag">Ongoing Project</span>
-          <h3>Villivakkam STP Site Work</h3>
-          <a href="https://noelinfrastructures.com/villivakkam-details.php" class="proj-lnk">View Project →</a>
+        <div class="sol-body">
+          <span class="sol-idx">SOL — 02</span>
+          <h3 class="sol-h">E-Surveillance &amp; CCTV Analytics</h3>
+          <p class="sol-p">Advanced surveillance systems with AI-powered analytics for enhanced security and monitoring.</p>
+          <a href="/solutions/cctv-surveillance" class="sol-lnk">Learn more →</a>
         </div>
       </div>
-      <div class="proj-card r d4">
-        <div class="proj-img">
-          <img src="https://noelinfrastructures.com/assets/images/infra-slide5.jpg" alt="Chennai Metro" loading="lazy"/>
+      <div class="sol-card r r3">
+        <div class="sol-img">
+          <img src="https://bradmantechnology.netlify.app/images/solutions/automation-bms.jpg" alt="Automation BMS" loading="lazy"/>
         </div>
-        <div class="proj-body">
-          <span class="proj-tag">Ongoing Project</span>
-          <h3>Chennai Metro Rail – Phase 2, Corridor-5</h3>
-          <a href="https://noelinfrastructures.com/metro-details.php" class="proj-lnk">View Project →</a>
+        <div class="sol-body">
+          <span class="sol-idx">SOL — 03</span>
+          <h3 class="sol-h">Automation &amp; BMS</h3>
+          <p class="sol-p">Building Management Systems and automation solutions for efficient facility operations.</p>
+          <a href="/solutions/automation-bms" class="sol-lnk">Learn more →</a>
+        </div>
+      </div>
+      <div class="sol-card r r1">
+        <div class="sol-img">
+          <img src="https://bradmantechnology.netlify.app/images/solutions/access-control-label-sign-vector-600nw-2315285965.webp" alt="Access Control" loading="lazy"/>
+        </div>
+        <div class="sol-body">
+          <span class="sol-idx">SOL — 04</span>
+          <h3 class="sol-h">Access Control &amp; Security</h3>
+          <p class="sol-p">State-of-the-art access control systems ensuring secure and seamless entry management.</p>
+          <a href="/solutions/access-control" class="sol-lnk">Learn more →</a>
+        </div>
+      </div>
+      <div class="sol-card r r2">
+        <div class="sol-img">
+          <img src="https://bradmantechnology.netlify.app/images/solutions/ai-voice.png" alt="AI Voice" loading="lazy"/>
+        </div>
+        <div class="sol-body">
+          <span class="sol-idx">SOL — 05</span>
+          <h3 class="sol-h">AI Voice Integration</h3>
+          <p class="sol-p">Next-generation AI voice integration solutions for smart interactions and automation.</p>
+          <a href="/solutions/ai-voice" class="sol-lnk">Learn more →</a>
+        </div>
+      </div>
+      <div class="sol-card r r3">
+        <div class="sol-img">
+          <img src="https://bradmantechnology.netlify.app/images/solutions/scada.jpg" alt="SCADA" loading="lazy"/>
+        </div>
+        <div class="sol-body">
+          <span class="sol-idx">SOL — 06</span>
+          <h3 class="sol-h">SCADA / Industrial Automation</h3>
+          <p class="sol-p">Industrial automation and SCADA systems for manufacturing and process control.</p>
+          <a href="/solutions/scada" class="sol-lnk">Learn more →</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MEGAFACTORY DARK BAND -->
-<section class="factory-sec">
+<!-- DARK BAND -->
+<section class="dark-band">
   <div class="container">
-    <div class="factory-inner">
-      <div class="factory-left r">
-        <div class="eyebrow">Upcoming</div>
-        <h2>Modular Manufacturing<br>Facility — UAE</h2>
-        <p>Our upcoming megafactory is located in the Jebel Ali Free Zone (JAFZA) in UAE. Spanning 2 acres, the covered facility will be 70,000 sft, using 90+ robots to build components at scale.</p>
-        <p>Supply capability of 3,000 units per year per bay. Each bay dedicated to a client/project. Factory ready for production by December 2025.</p>
-        <div class="factory-specs">
-          <div class="fspec"><span class="fspec-n">Output</span><h4>Floor Slab Production</h4><p>Steel and batching plant</p></div>
-          <div class="fspec"><span class="fspec-n">Output</span><h4>Bathroom Pods</h4><p>800 pods/year per shift</p></div>
-          <div class="fspec"><span class="fspec-n">Output</span><h4>Facade &amp; Walls</h4><p>External wall panels</p></div>
-          <div class="fspec"><span class="fspec-n">Output</span><h4>MEP Modules</h4><p>Services modules</p></div>
-        </div>
+    <div class="band-inner">
+      <div class="r">
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:rgba(248,246,242,.3);margin-bottom:20px;">Innovation Approach</p>
+        <h2>Building solutions that actually work</h2>
+        <p>We're always exploring new technologies like AI and data analytics to make our solutions better. By working closely with our team and partners, we can build smarter systems and get them to you faster.</p>
+        <p>See how we're creating practical solutions that help our customers stay ahead of the competition.</p>
       </div>
-      <div class="factory-right r d2">
-        <img src="https://noelinfrastructures.com/assets/images/manufacturing-facility.jpg" alt="Manufacturing Facility"/>
+      <div class="band-right r r2">
+        <div class="band-feat">
+          <span class="band-feat-n">01</span>
+          <h4>Practical Innovation</h4>
+          <p>Solutions that solve real problems today and prepare you for tomorrow.</p>
+        </div>
+        <div class="band-feat">
+          <span class="band-feat-n">02</span>
+          <h4>AI That Works</h4>
+          <p>Tools that analyze data and provide insights that actually matter.</p>
+        </div>
+        <div class="band-feat">
+          <span class="band-feat-n">03</span>
+          <h4>Industry Know-How</h4>
+          <p>Deep technical knowledge built across diverse verticals.</p>
+        </div>
+        <div class="band-feat">
+          <span class="band-feat-n">04</span>
+          <h4>Better Security</h4>
+          <p>AI-powered security that learns, adapts, and responds fast.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- PROJECTS CAROUSEL -->
-<div class="carousel-sec">
-  <div class="carousel-hdr">
-    <div>
-      <div class="eyebrow">Featured work</div>
-      <h2 class="sec-h">Projects in the spotlight</h2>
-    </div>
-    <div class="carousel-controls">
-      <button class="car-btn" id="carPrev" aria-label="Previous">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <button class="car-btn" id="carNext" aria-label="Next">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
-    </div>
-  </div>
-  <div class="carousel-viewport">
-    <div class="carousel-track" id="carTrack">
-      <div class="car-slide">
-        <div class="car-img"><img src="https://noelinfrastructures.com/assets/images/infra-slide5.jpg" alt="Chennai Metro"/></div>
-        <div class="car-body">
-          <span class="car-tag">Ongoing · Railway</span>
-          <h3>Chennai Metro Rail Phase 2</h3>
-          <p>Corridor-5 construction involving elevated viaduct, station structures and trackwork across the Chennai urban corridor.</p>
-          <a href="https://noelinfrastructures.com/metro-details.php" class="car-lnk">View project →</a>
-        </div>
-      </div>
-      <div class="car-slide">
-        <div class="car-img"><img src="https://noelinfrastructures.com/assets/images/port2.jpg" alt="Oberoi Eternia"/></div>
-        <div class="car-body">
-          <span class="car-tag">Completed · Residential</span>
-          <h3>Oberoi Eternia Tower D</h3>
-          <p>High-rise residential facade package including unitised curtain wall, aluminium windows and cladding for the Mumbai luxury tower.</p>
-          <a href="#portfolio" class="car-lnk">View project →</a>
-        </div>
-      </div>
-      <div class="car-slide">
-        <div class="car-img"><img src="https://noelinfrastructures.com/assets/images/port5.jpg" alt="Mascar"/></div>
-        <div class="car-body">
-          <span class="car-tag">Completed · Australia</span>
-          <h3>MASCAR Brisbane</h3>
-          <p>Full facade engineering and installation for the Brisbane residential development using ARBT Group's licensed modular facade technology.</p>
-          <a href="#portfolio" class="car-lnk">View project →</a>
-        </div>
-      </div>
-      <div class="car-slide">
-        <div class="car-img"><img src="https://noelinfrastructures.com/assets/images/manufacturing-facility.jpg" alt="UAE Factory"/></div>
-        <div class="car-body">
-          <span class="car-tag">Upcoming · UAE</span>
-          <h3>JAFZA Megafactory</h3>
-          <p>70,000 sft automated manufacturing facility in Jebel Ali Free Zone using 90+ robots producing modular components at 3,000 units per bay annually.</p>
-          <a href="#" class="car-lnk">Learn more →</a>
-        </div>
-      </div>
-      <div class="car-slide">
-        <div class="car-img"><img src="https://noelinfrastructures.com/assets/images/sboa.jpg" alt="SBOA"/></div>
-        <div class="car-body">
-          <span class="car-tag">Completed · Renovation</span>
-          <h3>SBOA School Renovation</h3>
-          <p>Complete renovation of a 35-year-old school building in Chennai, delivered in 45 days — one of Noel's landmark fast-track projects.</p>
-          <a href="https://noelinfrastructures.com/completed.php" class="car-lnk">View project →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="car-dots" id="carDots"></div>
-</div>
-
-<!-- PORTFOLIO -->
-<section class="portfolio-sec" id="portfolio">
+<!-- AI -->
+<section class="ai-sec" id="services">
   <div class="container">
-    <div class="eyebrow r">Track Record</div>
-    <h2 class="sec-h r d1">Completed Projects</h2>
-    <p class="sec-p r d2">Landmark projects delivered across India and Australia.</p>
-    <div class="port-grid">
-      <div class="port-card r d1"><div class="port-img"><img src="https://noelinfrastructures.com/assets/images/sboa.jpg" alt="SBOA" loading="lazy"/></div><div class="port-body"><h4>SBOA</h4><span class="port-loc">Chennai, India</span></div></div>
-      <div class="port-card r d2"><div class="port-img"><img src="https://noelinfrastructures.com/assets/images/port1.jpg" alt="Tril Ramanujam" loading="lazy"/></div><div class="port-body"><h4>TRIL Ramanujam IT Park</h4><span class="port-loc">Chennai, India</span></div></div>
-      <div class="port-card r d3"><div class="port-img"><img src="https://noelinfrastructures.com/assets/images/port2.jpg" alt="Oberoi" loading="lazy"/></div><div class="port-body"><h4>Oberoi Eternia Tower D</h4><span class="port-loc">Mumbai, India</span></div></div>
-      <div class="port-card r d4"><div class="port-img"><img src="https://noelinfrastructures.com/assets/images/port3.jpg" alt="Ushera" loading="lazy"/></div><div class="port-body"><h4>Ushera Sales Gallery</h4><span class="port-loc">Chennai, India</span></div></div>
-      <div class="port-card r d1"><div class="port-img"><img src="https://noelinfrastructures.com/assets/images/port4.jpg" alt="Wipro" loading="lazy"/></div><div class="port-body"><h4>Wipro SEZ</h4><span class="port-loc">Mahindra World City, TN</span></div></div>
-      <div class="port-card r d2"><div class="port-img"><img src="https://noelinfrastructures.com/assets/images/port5.jpg" alt="Mascar" loading="lazy"/></div><div class="port-body"><h4>MASCAR</h4><span class="port-loc">Brisbane, Australia</span></div></div>
-      <div class="port-card r d3"><div class="port-img"><img src="https://noelinfrastructures.com/assets/images/port7.jpg" alt="29 Raffles" loading="lazy"/></div><div class="port-body"><h4>29 Raffles</h4><span class="port-loc">Brisbane, Australia</span></div></div>
-      <div class="port-card r d4"><div class="port-img"><img src="https://noelinfrastructures.com/assets/images/port9.jpg" alt="Balmoral" loading="lazy"/></div><div class="port-body"><h4>Balmoral</h4><span class="port-loc">Brisbane, Australia</span></div></div>
+    <p class="sec-eyebrow r">How AI helps your business</p>
+    <h2 class="sec-title r r1">Technology that makes<br>a difference</h2>
+    <div class="ai-pair">
+      <div class="ai-card r r1">
+        <span class="ai-tag">AI Operations</span>
+        <h3>AI solutions that improve operations</h3>
+        <p>Our AI tools help streamline your operations, improve security, and make your business more efficient. See how AI can work for you.</p>
+        <a href="#solutions" class="ai-lnk">Find out more →</a>
+      </div>
+      <div class="ai-card r r2">
+        <span class="ai-tag">AI Security</span>
+        <h3>Better security with AI</h3>
+        <p>Keep your systems safe with AI-powered security that learns and adapts. Our solutions detect threats early and respond quickly to protect your business.</p>
+        <a href="#solutions" class="ai-lnk">Learn how →</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- VISION BAND -->
-<section class="vision-sec">
-  <div class="vision-inner">
-    <div class="vision-quote r">"To be a global leader in the EPC industry, renowned for pioneering modern construction technologies."</div>
-    <div class="vision-body r d2">Enhancing project delivery efficiency and contributing to sustainable infrastructure development worldwide. Our vision drives every project, every partnership, every innovation we bring to market.</div>
-  </div>
-</section>
-
-<!-- GROUP COMPANIES -->
-<section class="companies-sec" id="about">
+<!-- ABOUT -->
+<section class="about-sec" id="about">
   <div class="container">
-    <div class="eyebrow r">Group Companies</div>
-    <h2 class="sec-h r d1">Brief History of the Company</h2>
-    <div class="co-grid">
-      <div class="co-card r d1">
-        <div class="co-img"><img src="https://noelinfrastructures.com/assets/images/car1.jpg" alt="Noel Infra" loading="lazy"/></div>
-        <div class="co-body">
-          <h3>Noel Infrastructures Pvt Ltd</h3>
-          <p>Since 1990, NOEL Group has been a leader in traffic infrastructure, energy, and media, completing landmark projects in Chennai, Bangalore, Madurai, Trichy, Coimbatore, Kolkata, and Mumbai. A pioneer under the JNNSM scheme, NOEL executed India's first 1MW solar plant in 2011.</p>
-          <a href="https://noelinfrastructures.com/about.php" class="co-lnk">Read more →</a>
-        </div>
+    <div class="about-inner">
+      <div class="r">
+        <p class="sec-eyebrow" style="margin-bottom:16px;">About Us</p>
+        <h2>About<br><em style="font-style:italic;color:var(--muted);">Us.</em></h2>
+        <p>We're a team of innovative minds who decided to turn our passion for technology into something extraordinary. At TechSolutions, we gather around a table, armed with cutting-edge tools, creative ideas, and a determination to transform the digital landscape.</p>
+        <p>We are a leading technology solutions provider, specializing in IoT, automation, security, and AI integration. Our mission is to empower businesses with cutting-edge technology that drives efficiency, security, and innovation.</p>
       </div>
-      <div class="co-card r d2">
-        <div class="co-img"><img src="https://noelinfrastructures.com/assets/images/arbt_image.jpg" alt="ARBT" loading="lazy"/></div>
-        <div class="co-body">
-          <h3>ARBT Building Products Pvt Ltd</h3>
-          <p>Since 2011, ARBT has specialized in manufacturing and installing building facades, aluminum doors, and windows for global brands from France, Germany, Japan, and beyond, delivering projects across India including airports and commercial buildings.</p>
-          <a href="https://noelinfrastructures.com/arbt_detail.php" class="co-lnk">Read more →</a>
-        </div>
-      </div>
-      <div class="co-card r d3">
-        <div class="co-img"><img src="https://noelinfrastructures.com/assets/images/dynamicss_image.jpg" alt="Dynamic SS" loading="lazy"/></div>
-        <div class="co-body">
-          <h3>Dynamic SS Engg &amp; Constrn (P) Ltd</h3>
-          <p>Established in 2004, Dynamic SS excels in fabricating and erecting large-diameter tanks, vessels, piping, and structural components for power plants, refineries, cement and steel plants, and irrigation projects.</p>
-          <a href="https://noelinfrastructures.com/dynamic_detail.php" class="co-lnk">Read more →</a>
+      <div class="r r2">
+        <div class="about-pillars">
+          <div class="a-pillar"><span class="ap-n">01</span><h4>Mission-Driven</h4><p>Delivering innovative technology solutions that transform businesses.</p></div>
+          <div class="a-pillar"><span class="ap-n">02</span><h4>Expert Team</h4><p>Experienced professionals dedicated to your success.</p></div>
+          <div class="a-pillar"><span class="ap-n">03</span><h4>Proven Excellence</h4><p>Trusted by leading organizations across multiple industries.</p></div>
+          <div class="a-pillar"><span class="ap-n">04</span><h4>Innovation First</h4><p>Cutting-edge solutions powered by the latest technologies.</p></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- INDIA OPERATIONS -->
-<section class="indiaops-sec">
+<!-- INDUSTRIES -->
+<section class="ind-sec" id="industries">
   <div class="container">
-    <div class="eyebrow r">India Operations</div>
-    <h2 class="sec-h r d1">Manufacturing Facility</h2>
-    <p class="sec-p r d2">Our curtain wall, window, door and bathroom pod facility is located in the MEPZ Special Economic Zone, Chennai. 1.2 acres, three factories, 15,000 sq ft covered area.</p>
-    <div class="ops-grid">
-      <div class="ops-card r d1"><div class="ops-img"><img src="https://noelinfrastructures.com/assets/images/unitised_facades.jpg" alt="Unitised Facades" loading="lazy"/></div><div class="ops-body"><h4>Unitised Facades</h4></div></div>
-      <div class="ops-card r d2"><div class="ops-img"><img src="https://noelinfrastructures.com/assets/images/semi_unitised_facades.jpg" alt="Semi Unitised Facades" loading="lazy"/></div><div class="ops-body"><h4>Semi Unitised Facades</h4></div></div>
-      <div class="ops-card r d3"><div class="ops-img"><img src="https://noelinfrastructures.com/assets/images/acp_cladding.jpg" alt="ACP Cladding" loading="lazy"/></div><div class="ops-body"><h4>ACP Cladding</h4></div></div>
-      <div class="ops-card r d1"><div class="ops-img"><img src="https://noelinfrastructures.com/assets/images/windows.jpg" alt="Windows" loading="lazy"/></div><div class="ops-body"><h4>Windows &amp; Doors</h4></div></div>
-      <div class="ops-card r d2"><div class="ops-img"><img src="https://noelinfrastructures.com/assets/images/bathroom_pods.jpg" alt="Bathroom Pods" loading="lazy"/></div><div class="ops-body"><h4>Bathroom Pods</h4></div></div>
-      <div class="ops-card r d3"><div class="ops-img"><img src="https://noelinfrastructures.com/assets/images/modular_mep.jpg" alt="Modular MEP" loading="lazy"/></div><div class="ops-body"><h4>Modular MEP</h4></div></div>
-      <div class="ops-card r d1"><div class="ops-img"><img src="https://noelinfrastructures.com/assets/images/peb_Structures.jpg" alt="PEB Structures" loading="lazy"/></div><div class="ops-body"><h4>PEB Structures | Precast</h4></div></div>
-      <div class="ops-card r d2"><div class="ops-img"><img src="https://noelinfrastructures.com/assets/images/heavy_fabrication.jpg" alt="Heavy Fabrication" loading="lazy"/></div><div class="ops-body"><h4>Heavy Fabrication</h4></div></div>
-      <div class="ops-card r d3"><div class="ops-img"><img src="https://noelinfrastructures.com/assets/images/specialised_fabrication.jpg" alt="Specialised Fabrication" loading="lazy"/></div><div class="ops-body"><h4>Specialised Fabrication</h4></div></div>
+    <p class="sec-eyebrow r">Our Expertise</p>
+    <h2 class="sec-title r r1">Industries<br>We Serve</h2>
+    <div class="ind-grid">
+      <div class="ind-card r r1"><div class="ind-img"><img src="https://bradmantechnology.netlify.app/images/industries/airports.jpg" alt="Airports" loading="lazy"/></div><div class="ind-body"><h3>Airports</h3><div class="ind-foot"><a href="/industries/airports">Explore solutions →</a></div></div></div>
+      <div class="ind-card r r2"><div class="ind-img"><img src="https://bradmantechnology.netlify.app/images/industries/manufacturing.jpg" alt="Manufacturing" loading="lazy"/></div><div class="ind-body"><h3>Manufacturing</h3><div class="ind-foot"><a href="/industries/manufacturing">Explore solutions →</a></div></div></div>
+      <div class="ind-card r r3"><div class="ind-img"><img src="https://bradmantechnology.netlify.app/images/industries/education.jpg" alt="Education" loading="lazy"/></div><div class="ind-body"><h3>Education &amp; Institutions</h3><div class="ind-foot"><a href="/industries/education">Explore solutions →</a></div></div></div>
+      <div class="ind-card r r4"><div class="ind-img"><img src="https://bradmantechnology.netlify.app/images/industries/government.jpg" alt="Government" loading="lazy"/></div><div class="ind-body"><h3>Government</h3><div class="ind-foot"><a href="/industries/government">Explore solutions →</a></div></div></div>
+      <div class="ind-card r r1"><div class="ind-img"><img src="https://bradmantechnology.netlify.app/images/industries/healthcare.jpg" alt="Healthcare" loading="lazy"/></div><div class="ind-body"><h3>Healthcare</h3><div class="ind-foot"><a href="/industries/healthcare">Explore solutions →</a></div></div></div>
+      <div class="ind-card r r2"><div class="ind-img"><img src="https://bradmantechnology.netlify.app/images/industries/commercial-complex.jpg" alt="Commercial" loading="lazy"/></div><div class="ind-body"><h3>Commercial Complex</h3><div class="ind-foot"><a href="/industries/commercial-complex">Explore solutions →</a></div></div></div>
+      <div class="ind-card r r3"><div class="ind-img"><img src="https://bradmantechnology.netlify.app/images/industries/residential-buildings.jpg" alt="Residential" loading="lazy"/></div><div class="ind-body"><h3>Residential Buildings</h3><div class="ind-foot"><a href="/industries/residential-buildings">Explore solutions →</a></div></div></div>
+      <div class="ind-card r r4" style="background:var(--off);display:flex;align-items:center;justify-content:center;"><div style="text-align:center;padding:20px;"><p style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;">And more</p><a href="#contact" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--black);border-bottom:1px solid var(--border-dark);padding-bottom:2px;">Get in touch →</a></div></div>
     </div>
   </div>
 </section>
-  </div><!-- /.site-sections-wrap -->
 
-  <!-- STICKY BUILD SIDE PANEL — hero parallax, persists until contact -->
-  <aside class="build-side-panel" id="buildSidePanel">
-    <div class="build-bg-grid"></div>
-    <div class="build-panel-progress" id="buildPanelProgress"></div>
-    <div class="build-panel-header">Structure in Progress</div>
-    <canvas id="buildCanvas" width="240" height="340"></canvas>
-    <div class="build-panel-phase" id="buildPanelPhase">Scroll to build</div>
-    <div class="build-panel-pct" id="buildPanelPct"></div>
-    <div class="build-panel-scroll-hint" id="buildScrollHint">
-      <span>Scroll</span>
-      <div class="build-panel-arrow"></div>
+<!-- CLIENTS -->
+<!-- NEWS -->
+<section class="news-sec">
+  <div class="container">
+    <div class="news-head r">
+      <div>
+        <p class="sec-eyebrow">Updates</p>
+        <h2 class="sec-title" style="margin-bottom:0;">News and Updates</h2>
+      </div>
+      <a href="#" class="view-all-lnk">View All →</a>
     </div>
-  </aside>
+    <div class="news-grid">
+      <div class="news-card r r1"><span class="news-dt">24 Nov 2025</span><h3>TechSolutions Launches Next-Generation IoT Platform</h3><p>Revolutionary IoT platform designed to transform industrial operations and enable real-time data analytics.</p></div>
+      <div class="news-card r r2"><span class="news-dt">17 Nov 2025</span><h3>Partnership with Leading Healthcare Institutions</h3><p>Expanding our digital health solutions to support healthcare infrastructure and patient care automation.</p></div>
+      <div class="news-card r r3"><span class="news-dt">10 Nov 2025</span><h3>New AI-Powered Security Solutions Unveiled</h3><p>Advanced AI integration for enhanced surveillance and security management across multiple industries.</p></div>
+    </div>
+  </div>
+</section>
 
-</div><!-- /.site-build-zone -->
 
-
+<!-- CONTACT -->
+<section class="contact-sec" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="r">
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:rgba(248,246,242,.3);margin-bottom:20px;">Get in touch</p>
+        <h2>Contact<br>Us.</h2>
+        <p>Get in touch with us. Fill out the form below and we'll get back to you as soon as possible.</p>
+        <div>
+          <div class="contact-info-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span>info@techsolutions.com</span></div>
+          <div class="contact-info-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+1 (234) 567-890</span></div>
+          <div class="contact-info-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>123 Tech Street, Innovation City, IC 12345</span></div>
+        </div>
+      </div>
+      <form class="r r2">
+        <div class="frm-row">
+          <div class="frm-f"><input type="text" placeholder="Your Name" name="name" required/></div>
+          <div class="frm-f"><input type="email" placeholder="Your Email ID" name="email" required/></div>
+        </div>
+        <div class="frm-f"><input type="tel" placeholder="Mobile Number" name="mobile" required/></div>
+        <div class="frm-f"><textarea name="description" placeholder="Description" rows="4" required></textarea></div>
+        <button type="submit" class="frm-submit">Send Message</button>
+        <p class="frm-note">By submitting this form, you confirm that you have read and agree with our Terms of Use and Privacy Policy.</p>
+      </form>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
-<footer id="contact">
+<footer>
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="footer-logo">
-          <img src="https://noelinfrastructures.com/assets/images/logo2.png" alt="Noel Infrastructures"/>
+        <a href="/" class="footer-logo">Bradman<span class="footer-logo-r">®</span></a>
+        <p>Leading provider of advanced IT technology solutions for industries worldwide.</p>
+        <div class="footer-socs">
+          <a href="#" class="footer-soc"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" class="footer-soc"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+          <a href="#" class="footer-soc"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
         </div>
-        <p>To be a global leader in the EPC industry, recognized for adopting innovative construction technologies, improving project delivery efficiency, and playing a key role in developing sustainable infrastructure worldwide.</p>
       </div>
       <div class="footer-col">
-        <h4>Our Services</h4>
+        <h4>Solutions</h4>
         <ul>
-          <li><a href="#services">EPC Projects</a></li>
-          <li><a href="#services">Railways &amp; Airport Infrastructure</a></li>
-          <li><a href="#services">Renewable Energy</a></li>
-          <li><a href="#services">General Contracting</a></li>
-          <li><a href="#services">Modular Building Systems</a></li>
-          <li><a href="#services">Facades</a></li>
+          <li><a href="#solutions">IoT Systems &amp; Sensors</a></li>
+          <li><a href="#solutions">E-Surveillance &amp; CCTV</a></li>
+          <li><a href="#solutions">Automation &amp; BMS</a></li>
+          <li><a href="#solutions">Access Control</a></li>
+          <li><a href="#solutions">AI Voice Integration</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Office Address</h4>
-        <span>31/22, Victoria Crescent Road,</span>
-        <span>Egmore, Chennai – 600 008</span>
-        <span style="margin-top:10px;"><a href="tel:+914446070700">+91 44 4607 0700</a></span>
-        <span><a href="mailto:noelinfra@noelnetwork.com">noelinfra@noelnetwork.com</a></span>
+        <h4>Industries</h4>
+        <ul>
+          <li><a href="#industries">Airports</a></li>
+          <li><a href="#industries">Manufacturing</a></li>
+          <li><a href="#industries">Education</a></li>
+          <li><a href="#industries">Healthcare</a></li>
+          <li><a href="#industries">Government</a></li>
+        </ul>
       </div>
       <div class="footer-col">
-        <h4>Factory Address</h4>
-        <span>C-2A, Phase – 1, MEPZ,</span>
-        <span>Tambaram, Chennai – 600 045</span>
-        <span style="margin-top:10px;">Selvam Nagar, Senthamangalam Village,</span>
-        <span>Sriperumbudur (Tk), Kanchipuram – 602 103</span>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@techsolutions.com">info@techsolutions.com</a></li>
+          <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+          <li><span style="font-size:13px;font-weight:300;color:rgba(248,246,242,.3);">123 Tech Street, Innovation City</span></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>Copyright © 2024 Noel Infrastructures. All rights reserved.</p>
-      <p style="font-size:11px;font-weight:300;color:rgba(245,241,234,.15);">EPC · Modular · Facades · Renewable Energy</p>
+      <p>© 2025 TechSolutions. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
     </div>
   </div>
 </footer>
 
-<!-- CHAT LAUNCHER -->
-<div class="chat-launcher-wrap" id="chatLauncherWrap">
-  <div class="chat-panel" id="chatPanel">
-    <div class="chat-panel-title">Get in touch</div>
-
-    <a href="tel:+918438807500" class="chat-option">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.5 16.5v.42z"/>
-      </svg>
-      <div>
-        Call us
-        <span class="chat-option-sub">+91 84388 07500</span>
-      </div>
-    </a>
-
-    <a href="sms:+918438807500" class="chat-option">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-      </svg>
-      <div>
-        Send a message
-        <span class="chat-option-sub">+91 84388 07500</span>
-      </div>
-    </a>
-
-    <a href="https://noelinfrastructures.com/assets/images/manufacturing-facility.jpg" download="Noel-Brochure.pdf" class="chat-option">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-        <polyline points="7 10 12 15 17 10"/>
-        <line x1="12" y1="15" x2="12" y2="3"/>
-      </svg>
-      <div>
-        Download brochure
-        <span class="chat-option-sub">PDF — Company profile</span>
-      </div>
-    </a>
-  </div>
-
-  <button class="chat-fab" id="chatFab" aria-label="Contact us">
-    <svg viewBox="0 0 24 24">
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-    </svg>
-  </button>
-</div>
-
-<!-- BACK TO TOP -->
-<button class="back-top" id="backTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
-</button>
-
-<!-- COOKIE BANNER -->
-<div class="cookie-bar" id="cookieBar">
-  <p class="cookie-text">
-    We use cookies to improve your experience on our site. By continuing to browse, you agree to our
-    <a href="#">Privacy Policy</a>.
-  </p>
-  <div class="cookie-btns">
-    <button class="cookie-decline" id="cookieDecline">Decline</button>
-    <button class="cookie-accept" id="cookieAccept">Accept cookies</button>
-  </div>
-</div>
+<!-- WHATSAPP -->
+<a href="https://wa.me/917338978913?text=Hello%2C%20I'm%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" class="wa" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
+</a>
 
 <script>
+/* ── Hero carousel ── */
+(function(){
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots   = document.querySelectorAll('.hero-dot');
+  let current  = 0;
+  let timer;
+
+  function goTo(n){
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function next(){ goTo(current + 1); }
+
+  function start(){ timer = setInterval(next, 4500); }
+  function stop(){  clearInterval(timer); }
+
+  dots.forEach((d, i) => {
+    d.addEventListener('click', () => { stop(); goTo(i); start(); });
+  });
+
+  /* pause on hover */
+  const hero = document.querySelector('.hero');
+  hero.addEventListener('mouseenter', stop);
+  hero.addEventListener('mouseleave', start);
+
+  start();
+})();
+
 /* ── Scroll reveal ── */
 const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); }});
-}, { threshold:.08, rootMargin:'0px 0px -28px 0px' });
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); } });
+}, { threshold:.08, rootMargin:'0px 0px -32px 0px' });
 document.querySelectorAll('.r').forEach(el => obs.observe(el));
 
-/* ── Hero project image carousel ── */
+/* ── Fabrica-style letter-by-letter hero entrance ── */
 (function(){
-  const track = document.getElementById('heroCarTrack');
-  if(!track) return;
-
-  const images = [
-    {src:'https://noelinfrastructures.com/assets/images/infra-slide5.jpg',       alt:'Chennai Metro'},
-    {src:'https://noelinfrastructures.com/assets/images/infra-slide1.jpg',       alt:'Nandhambakkam TIDCO'},
-    {src:'https://noelinfrastructures.com/assets/images/infra-slide2.jpg',       alt:'Ethiraj College'},
-    {src:'https://noelinfrastructures.com/assets/images/infra-slide3.jpg',       alt:'Villivakkam STP'},
-    {src:'https://noelinfrastructures.com/assets/images/sboa.jpg',               alt:'SBOA'},
-    {src:'https://noelinfrastructures.com/assets/images/port1.jpg',              alt:'Port Project'},
-    {src:'https://noelinfrastructures.com/assets/images/port2.jpg',              alt:'Port Works'},
-    {src:'https://noelinfrastructures.com/assets/images/port4.jpg',              alt:'Harbour'},
-    {src:'https://noelinfrastructures.com/assets/images/port5.jpg',              alt:'Marine'},
-    {src:'https://noelinfrastructures.com/assets/images/manufacturing-facility.jpg', alt:'Manufacturing Facility'},
-    {src:'https://noelinfrastructures.com/assets/images/unitised_facades.jpg',   alt:'Unitised Facades'},
-    {src:'https://noelinfrastructures.com/assets/images/bathroom_pods.jpg',      alt:'Bathroom Pods'},
-  ];
-
-  const SLIDE_STEP = 264; /* 250px slide + 14px gap */
-  const N          = images.length;
-  let current      = 0;
-  let busy         = false;
-
-  /* Build 2× set of slides for seamless loop */
-  const allSlides = [...images, ...images].map((im, i) => {
-    const div = document.createElement('div');
-    div.className = 'hero-car-slide' + (i === 0 ? ' hcs-active' : '');
-    div.innerHTML = `<img src="${im.src}" alt="${im.alt}" loading="lazy"/>`;
-    track.appendChild(div);
-    return div;
+  const el = document.getElementById('hero-brand-word');
+  if(!el) return;
+  const text = el.textContent;
+  el.innerHTML = '';
+  text.split('').forEach((ch, i) => {
+    const span = document.createElement('span');
+    span.className = 'char';
+    span.textContent = ch === ' ' ? '\u00a0' : ch;
+    span.style.animationDelay = (80 + i * 60) + 'ms';
+    el.appendChild(span);
   });
-
-  function setActive(idx){
-    allSlides.forEach((s, i) => {
-      s.classList.toggle('hcs-active', i === idx || i === idx + N);
-    });
-  }
-
-  function goTo(idx, animate){
-    track.style.transition = animate
-      ? 'transform .78s cubic-bezier(.45,.05,.15,1)'
-      : 'none';
-    track.style.transform = `translateX(-${idx * SLIDE_STEP}px)`;
-    setActive(idx);
-    current = idx;
-  }
-
-  goTo(0, false);
-
-  /* After each animated slide, check if we need to silently reset */
-  track.addEventListener('transitionend', () => {
-    if(current >= N){
-      goTo(0, false);
-    }
-    busy = false;
-  });
-
-  /* Auto-advance */
-  setInterval(() => {
-    if(busy) return;
-    busy = true;
-    const next = current + 1;
-    goTo(next, true);
-    /* transitionend will clear busy and loop if needed */
-  }, 3000);
 })();
 
-/* ── Hero-parallax build animation — sticky side panel, full scroll journey ── */
-(function(){
-  const canvas   = document.getElementById('buildCanvas');
-  const zone     = document.getElementById('siteBuildZone');
-  const footer   = document.getElementById('contact');
-  const phaseEl  = document.getElementById('buildPanelPhase');
-  const pctEl    = document.getElementById('buildPanelPct');
-  const progBar  = document.getElementById('buildPanelProgress');
-  const hint     = document.getElementById('buildScrollHint');
-  if(!canvas || !zone) return;
-
-  const ctx = canvas.getContext('2d');
-  const W = canvas.width, H = canvas.height;
-
-  /* ── hand-drawn helpers ── */
-  function jitter(v, amt){ return v + (Math.random()-.5)*amt; }
-
-  function doodleLine(x1,y1,x2,y2,col,lw,prog){
-    if(prog<=0) return;
-    ctx.save();
-    ctx.strokeStyle=col; ctx.lineWidth=lw;
-    ctx.lineCap='round'; ctx.lineJoin='round';
-    ctx.beginPath();
-    const ex=x1+(x2-x1)*prog, ey=y1+(y2-y1)*prog;
-    const mx=(x1+x2)/2+jitter(0,2), my=(y1+y2)/2+jitter(0,2);
-    ctx.moveTo(jitter(x1,1),jitter(y1,1));
-    ctx.quadraticCurveTo(mx,my,ex,ey);
-    ctx.stroke(); ctx.restore();
+/* ── Count-up animation on stats ── */
+function countUp(el){
+  const target = parseInt(el.dataset.target, 10);
+  const suffix = el.dataset.suffix || '';
+  const duration = 1800;
+  const startTime = performance.now();
+  function step(now){
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    // easeOutExpo
+    const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+    const val = Math.floor(ease * target);
+    el.innerHTML = val + '<sup>' + suffix + '</sup>';
+    if(progress < 1) requestAnimationFrame(step);
   }
-
-  function doodleRect(x,y,w,h,col,lw,prog){
-    if(prog<=0) return;
-    const perim=2*(w+h); let drawn=perim*prog;
-    ctx.save(); ctx.strokeStyle=col; ctx.lineWidth=lw; ctx.lineCap='round';
-    const b=Math.min(drawn,w); drawn-=b; if(b>0) doodleLine(x,y+h,x+b,y+h,col,lw,1);
-    const r=Math.min(drawn,h); drawn-=r; if(r>0) doodleLine(x+w,y+h,x+w,y+h-r,col,lw,1);
-    const t=Math.min(drawn,w); drawn-=t; if(t>0) doodleLine(x+w,y,x+w-t,y,col,lw,1);
-    const l=Math.min(drawn,h); drawn-=l; if(l>0) doodleLine(x,y,x,y+l,col,lw,1);
-    ctx.restore();
-  }
-
-  function doodleFill(x,y,w,h,col,prog){
-    if(prog<=0) return;
-    ctx.save(); ctx.strokeStyle=col; ctx.lineWidth=.8;
-    ctx.globalAlpha=prog*.25;
-    ctx.beginPath();
-    for(let i=-h;i<w+h;i+=6){ ctx.moveTo(x+i,y+h); ctx.lineTo(x+i+h,y); }
-    ctx.stroke(); ctx.restore();
-  }
-
-  function doodleCircle(cx,cy,r,col,lw,prog){
-    if(prog<=0) return;
-    ctx.save(); ctx.strokeStyle=col; ctx.lineWidth=lw;
-    ctx.beginPath();
-    ctx.arc(cx,cy,r,-Math.PI/2,-Math.PI/2+Math.PI*2*prog);
-    ctx.stroke(); ctx.restore();
-  }
-
-  function doodleText(txt,x,y,col,sz){
-    ctx.save(); ctx.fillStyle=col;
-    ctx.font=sz+'px JetBrains Mono, monospace';
-    ctx.fillText(txt,x+jitter(0,.5),y+jitter(0,.5));
-    ctx.restore();
-  }
-
-  /* ── Building geometry — scaled for 240×340 canvas ── */
-  const GY   = 298;
-  const RUST = '#b5420a';
-  const DARK = '#2a2218';
-  const BEAM = '#1a1410';
-  const GLASS= '#4a7a90';
-  const ANNO = 'rgba(181,66,10,.5)';
-  const SX   = 240/280; /* scale x from original 280 canvas */
-  const SY   = 340/400; /* scale y from original 400 canvas */
-
-  function sx(v){ return v*SX; }
-  function sy(v){ return v*SY; }
-
-  const cols = [
-    { bx:sx(44), bw:sx(16), top:sy(100) },
-    { bx:sx(106),bw:sx(16), top:sy(82)  },
-    { bx:sx(170),bw:sx(16), top:sy(82)  },
-    { bx:sx(232),bw:sx(16), top:sy(100) },
-  ];
-
-  const beams = [
-    { y:sy(258), h:sy(9) },
-    { y:sy(198), h:sy(9) },
-    { y:sy(144), h:sy(9) },
-  ];
-
-  const roofY = sy(118);
-
-  const bays = [
-    { x:sx(62),  w:sx(38), rows:[{y:sy(155),h:sy(38)},{y:sy(214),h:sy(40)}] },
-    { x:sx(128), w:sx(38), rows:[{y:sy(155),h:sy(38)},{y:sy(214),h:sy(40)}] },
-    { x:sx(194), w:sx(38), rows:[{y:sy(155),h:sy(38)},{y:sy(214),h:sy(40)}] },
-  ];
-
-  function eio(t){ return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2; }
-  function clamp(v,a,b){ return Math.max(a,Math.min(b,v)); }
-
-  function drawBuilding(t){
-    ctx.clearRect(0,0,W,H);
-    function ph(idx){ return clamp((t*8-idx),0,1); }
-
-    /* phase 0: ground + foundation */
-    const p0=eio(ph(0));
-    if(p0>0){
-      doodleLine(8,GY+4,W-8,GY+4,ANNO,1,p0);
-      doodleText('\xB10.000 GL',W-62,GY+14,ANNO,'7');
-      doodleRect(sx(24),GY-sy(12),W-sx(48),sy(12),RUST,2,p0);
-      doodleFill(sx(24),GY-sy(12),W-sx(48),sy(12),RUST,p0);
-      if(p0>.7){
-        [sx(52),sx(88),sx(124),sx(160),sx(196),sx(232)].forEach(cx=>{
-          doodleCircle(cx,GY-sy(6),sx(2.5),RUST,1.2,p0);
-        });
-      }
-    }
-
-    /* phase 1: pile caps */
-    const p1=eio(ph(1));
-    if(p1>0){
-      cols.forEach(c=>{
-        doodleRect(c.bx-sx(5),GY-sy(20),c.bw+sx(10),sy(10),RUST,1.5,p1);
-        doodleFill(c.bx-sx(5),GY-sy(20),c.bw+sx(10),sy(10),DARK,p1);
-      });
-    }
-
-    /* phase 2: columns rise */
-    const p2=eio(ph(2));
-    if(p2>0){
-      cols.forEach(c=>{
-        const colH=GY-sy(20)-c.top;
-        const drawnH=colH*p2;
-        const y=GY-sy(20)-drawnH;
-        doodleRect(c.bx,y,c.bw,drawnH,DARK,1.8,1);
-        doodleFill(c.bx,y,c.bw,drawnH,DARK,.55);
-        doodleLine(c.bx+sx(3),y,c.bx+sx(3),GY-sy(20),RUST,.7,p2);
-        doodleLine(c.bx+c.bw-sx(3),y,c.bx+c.bw-sx(3),GY-sy(20),RUST,.7,p2);
-      });
-      if(p2>.8){
-        const leftX=cols[0].bx-sx(14);
-        const topY=GY-sy(20)-(GY-sy(20)-cols[0].top)*p2;
-        doodleLine(leftX,topY,leftX,GY-sy(20),ANNO,.8,1);
-        doodleLine(leftX-sx(3),topY,leftX+sx(3),topY,ANNO,.8,1);
-        doodleLine(leftX-sx(3),GY-sy(20),leftX+sx(3),GY-sy(20),ANNO,.8,1);
-        if(p2>.95) doodleText('H',leftX-sx(11),(topY+GY-sy(20))/2+sy(3),ANNO,'8');
-      }
-    }
-
-    /* phases 3-5: beams */
-    [3,4,5].forEach((phase,bi)=>{
-      const pb=eio(ph(phase));
-      if(pb>0){
-        const beam=beams[bi];
-        const bx=cols[0].bx;
-        const bw=cols[3].bx+cols[3].bw-bx;
-        doodleRect(bx,beam.y,bw,beam.h,RUST,1.8,pb);
-        doodleFill(bx,beam.y,bw,beam.h,BEAM,pb);
-        doodleLine(bx,beam.y+beam.h/2,bx+bw,beam.y+beam.h/2,RUST,.6,pb);
-      }
-    });
-
-    /* phase 6: roof */
-    const p6=eio(ph(6));
-    if(p6>0){
-      doodleRect(sx(18),roofY-sy(3),W-sx(36),sy(16),RUST,2.2,p6);
-      doodleFill(sx(18),roofY-sy(3),W-sx(36),sy(16),DARK,p6);
-      if(p6>.5){
-        [sx(50),sx(84),sx(118),sx(152),sx(186),sx(220)].forEach(cx=>{
-          doodleLine(cx,roofY-sy(3),cx,roofY+sy(13),RUST,.8,p6);
-        });
-      }
-    }
-
-    /* phase 7: windows + facade + crane */
-    const p7=eio(ph(7));
-    if(p7>0){
-      bays.forEach(bay=>{
-        bay.rows.forEach(row=>{
-          doodleRect(bay.x,row.y,bay.w,row.h,GLASS,1.2,p7);
-          if(p7>.5){
-            doodleLine(bay.x+bay.w/2,row.y,bay.x+bay.w/2,row.y+row.h,GLASS,.6,p7);
-            doodleLine(bay.x,row.y+row.h/2,bay.x+bay.w,row.y+row.h/2,GLASS,.6,p7);
-          }
-          if(p7>.6){
-            ctx.save(); ctx.globalAlpha=p7*.12; ctx.fillStyle=GLASS;
-            ctx.fillRect(bay.x,row.y,bay.w*p7,row.h); ctx.restore();
-          }
-        });
-      });
-      if(p7>.4){
-        doodleLine(cols[1].bx+cols[1].bw,sy(144),cols[2].bx,sy(258),RUST,.8,p7);
-        doodleLine(cols[1].bx+cols[1].bw,sy(258),cols[2].bx,sy(144),RUST,.8,p7);
-      }
-      if(p7>.85){
-        const cr=(p7-.85)/.15;
-        doodleLine(W-sx(28),roofY-sy(3),W-sx(28),roofY-sy(48),RUST,2,cr);
-        doodleLine(W-sx(28),roofY-sy(45),W-sx(6),roofY-sy(45),RUST,1.5,cr);
-        doodleLine(W-sx(28),roofY-sy(45),W-sx(42),roofY-sy(32),RUST,1,cr);
-        if(cr>.6) doodleLine(W-sx(10),roofY-sy(45),W-sx(10),roofY-sy(24),RUST,.8,cr);
-        if(cr>.8) doodleCircle(W-sx(10),roofY-sy(20),sx(3.5),RUST,1.2,cr);
-      }
-    }
-  }
-
-  const phaseLabels=[
-    'Foundation slab','Pile caps','Columns rising',
-    'Beam — L1','Beam — L2','Beam — L3',
-    'Roof slab','Facade & glazing'
-  ];
-
-  /* ── SCROLL DRIVER — full-page parallax ──
-     Progress runs from zone top entering viewport → footer entering viewport */
-  let lastT=-1, seed=42;
-  const origRandom=Math.random;
-
-  function seededDraw(t){
-    let s=seed+Math.round(t*1000);
-    Math.random=function(){ s=(s*9301+49297)%233280; return s/233280; };
-    drawBuilding(t);
-    Math.random=origRandom;
-  }
-
-  function update(){
-    const zoneTop    = zone.getBoundingClientRect().top + window.scrollY;
-    const footerTop  = footer
-      ? footer.getBoundingClientRect().top + window.scrollY
-      : zoneTop + zone.offsetHeight;
-    const scrollable = footerTop - zoneTop;
-    const scrolled   = window.scrollY - zoneTop;
-    const t          = Math.max(0, Math.min(1, scrolled / scrollable));
-
-    if(Math.abs(t-lastT)>.001){
-      lastT=t;
-      seededDraw(t);
-      const pi=Math.min(Math.floor(t*8),7);
-      if(phaseEl)  phaseEl.textContent  = phaseLabels[pi].toUpperCase();
-      if(pctEl)    pctEl.textContent    = Math.round(t*100)+'%';
-      if(progBar)  progBar.style.width  = (t*100)+'%';
-      /* hide scroll hint once user has scrolled a bit */
-      if(hint)     hint.style.opacity   = t>.04?'0':'1';
-    }
-  }
-
-  window.addEventListener('scroll', update, {passive:true});
-  seededDraw(0);
-})();
-
-/* ── Scroll: sticky enquire + back-to-top ── */
-window.addEventListener('scroll', () => {
-  const show = window.scrollY > 400;
-  document.getElementById('stickyEnquire').classList.toggle('show', show);
-  document.getElementById('backTop').classList.toggle('show', show);
-}, {passive:true});
-const dmBtn  = document.getElementById('dmToggle');
-const dmIcon = dmBtn.querySelector('.dm-icon svg path');
-const savedTheme = localStorage.getItem('noel-theme') || 'light';
-document.documentElement.setAttribute('data-theme', savedTheme);
-updateDmIcon(savedTheme);
-
-dmBtn.addEventListener('click', () => {
-  const current = document.documentElement.getAttribute('data-theme');
-  const next = current === 'dark' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', next);
-  localStorage.setItem('noel-theme', next);
-  updateDmIcon(next);
-});
-
-function updateDmIcon(theme){
-  if(!dmIcon) return;
-  if(theme === 'dark'){
-    /* sun icon */
-    dmIcon.setAttribute('d','M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41M12 6a6 6 0 0 1 0 12 6 6 0 0 1 0-12z');
-  } else {
-    /* moon icon */
-    dmIcon.setAttribute('d','M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z');
-  }
+  requestAnimationFrame(step);
 }
 
-/* ── Carousel ── */
-(function(){
-  const track  = document.getElementById('carTrack');
-  const dotsEl = document.getElementById('carDots');
-  const prev   = document.getElementById('carPrev');
-  const next   = document.getElementById('carNext');
-  if(!track) return;
-
-  const slides = track.querySelectorAll('.car-slide');
-  const N = slides.length;
-  let cur = 0;
-
-  /* Build dots */
-  const dots = [];
-  slides.forEach((_,i)=>{
-    const d = document.createElement('button');
-    d.className = 'car-dot' + (i===0?' active':'');
-    d.setAttribute('aria-label', 'Slide ' + (i+1));
-    d.addEventListener('click', ()=>goTo(i));
-    dotsEl.appendChild(d);
-    dots.push(d);
-  });
-
-  function goTo(i){
-    cur = (i + N) % N;
-    /* Each slide = 50% viewport - 12px gap; show 2 at a time */
-    const slideW = track.parentElement.offsetWidth / 2;
-    track.style.transform = `translateX(-${cur * (slideW + 24)}px)`;
-    dots.forEach((d,j)=>d.classList.toggle('active', j===cur));
-  }
-
-  prev.addEventListener('click', ()=>goTo(cur-1));
-  next.addEventListener('click', ()=>goTo(cur+1));
-
-  /* Auto-advance */
-  setInterval(()=>goTo(cur+1), 5000);
-})();
-
-/* ── Cookie banner ── */
-const cookieBar = document.getElementById('cookieBar');
-if(localStorage.getItem('noel-cookie-consent')){
-  cookieBar.classList.add('hidden');
-}
-document.getElementById('cookieAccept').addEventListener('click', () => {
-  localStorage.setItem('noel-cookie-consent','accepted');
-  cookieBar.classList.add('hidden');
-});
-document.getElementById('cookieDecline').addEventListener('click', () => {
-  localStorage.setItem('noel-cookie-consent','declined');
-  cookieBar.classList.add('hidden');
-});
-
-/* ── Chat launcher ── */
-(function(){
-  const fab   = document.getElementById('chatFab');
-  const panel = document.getElementById('chatPanel');
-  if(!fab || !panel) return;
-  let open = false;
-  fab.addEventListener('click', e => {
-    e.stopPropagation();
-    open = !open;
-    panel.classList.toggle('open', open);
-    /* rotate icon */
-    fab.style.transform = open ? 'rotate(45deg) scale(1.05)' : '';
-  });
-  document.addEventListener('click', e => {
-    if(open && !panel.contains(e.target) && e.target !== fab){
-      open = false;
-      panel.classList.remove('open');
-      fab.style.transform = '';
+const statNums = document.querySelectorAll('.stat-num[data-target]');
+const statObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      countUp(e.target);
+      statObs.unobserve(e.target);
     }
   });
-})();
-
-/* ── Services Fan — Logarithmic Spiral positioning + entrance animation ── */
-(function(){
-  const area   = document.getElementById('svcFanArea');
-  const arcSvg = document.getElementById('svcArcSvg');
-  const ancDot = document.getElementById('svcAnchorDot');
-  if(!area) return;
-  const items = Array.from(area.querySelectorAll('.sfi'));
-  let hasAnimated = false;
-
-  function layout(){
-    const W = area.offsetWidth, H = area.offsetHeight;
-    /* anchor sits near bottom-right */
-    const ax = W * 0.82, ay = H * 0.90;
-    ancDot.style.left = ax + 'px';
-    ancDot.style.top  = ay + 'px';
-
-    /* Larger base radius so items breathe — was 0.30, now 0.50 */
-    const n = items.length, a = Math.min(W,H)*0.50, b = 0.20;
-    const startDeg = 20, endDeg = 122;
-    const pts = [];
-    items.forEach((el, i) => {
-      const t     = i / (n - 1);
-      const theta = (startDeg + (endDeg - startDeg) * t) * Math.PI / 180;
-      const r     = a * Math.exp(b * theta);
-      const x     = ax - r * Math.cos(theta);
-      const y     = ay - r * Math.sin(theta);
-      el.style.left = x + 'px';
-      el.style.top  = y + 'px';
-      /* stagger delay: 80 ms per item */
-      el.style.setProperty('--fan-delay', (i * 80) + 'ms');
-      pts.push({x, y});
-    });
-
-    /* Draw SVG connector lines + smooth arc */
-    if(arcSvg){
-      arcSvg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-      const lines = pts.map(p =>
-        `<line x1="${ax}" y1="${ay}" x2="${p.x}" y2="${p.y}"
-               stroke="rgba(225,29,72,.10)" stroke-width="1" stroke-dasharray="4 7"/>`
-      ).join('');
-      let d = `M ${pts[0].x} ${pts[0].y}`;
-      for(let i=1;i<pts.length;i++){
-        const p=pts[i-1], c=pts[i], mx=(p.x+c.x)/2, my=(p.y+c.y)/2;
-        d += ` Q ${p.x} ${p.y} ${mx} ${my}`;
-      }
-      d += ` Q ${pts[pts.length-2].x} ${pts[pts.length-2].y} ${pts[pts.length-1].x} ${pts[pts.length-1].y}`;
-      arcSvg.innerHTML =
-        `${lines}
-         <path d="${d}" fill="none" stroke="rgba(225,29,72,.18)"
-               stroke-width="1.5" stroke-dasharray="3 6"/>
-         <circle cx="${ax}" cy="${ay}" r="4" fill="#e11d48" opacity=".7"/>`;
-    }
-  }
-
-  /* Trigger staggered fly-in when section enters viewport */
-  function triggerFanIn(){
-    if(hasAnimated) return;
-    hasAnimated = true;
-    items.forEach((el, i) => {
-      setTimeout(() => el.classList.add('fan-in'), i * 80);
-    });
-  }
-
-  layout();
-
-  /* IntersectionObserver — fire when ≥30% visible */
-  const observer = new IntersectionObserver(entries => {
-    if(entries[0].isIntersecting) triggerFanIn();
-  }, { threshold: 0.30 });
-  observer.observe(area);
-
-  /* Dock neighbour magnification */
-  items.forEach((el, i) => {
-    el.addEventListener('mouseenter', () => {
-      items.forEach((nb, j) => {
-        nb.classList.remove('nb1','nb2');
-        const d = Math.abs(i - j);
-        if(d === 1) nb.classList.add('nb1');
-        else if(d === 2) nb.classList.add('nb2');
-      });
-    });
-    el.addEventListener('mouseleave', () => {
-      items.forEach(nb => nb.classList.remove('nb1','nb2'));
-    });
-  });
-
-  let rt;
-  window.addEventListener('resize', () => {
-    clearTimeout(rt);
-    rt = setTimeout(() => { layout(); if(hasAnimated){ items.forEach(el => el.classList.add('fan-in')); } }, 120);
-  });
-})();
+}, { threshold: 0.4 });
+statNums.forEach(el => statObs.observe(el));
 </script>
 </body>
 </html>
